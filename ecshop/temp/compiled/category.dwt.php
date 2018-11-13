@@ -20,72 +20,87 @@
 <body>
 <?php echo $this->fetch('library/page_header.lbi'); ?>
 
- <div class="category-body">
-  <div id="ur_here"> <?php echo $this->fetch('library/ur_here.lbi'); ?> </div>
- 
+  <?php echo $this->fetch('library/ur_here.lbi'); ?>
 
 <div class="block clearfix">
-
   
-  <div class="Area">
+  <div class="AreaL">
     
-    <?php if ($this->_var['brands']['1'] || $this->_var['price_grade']['1'] || $this->_var['filter_attr_list']): ?>
-    <div class="guige">
-      <?php if ($this->_var['brands']['1']): ?>
-      <div class="screeBox"> <strong><?php echo $this->_var['lang']['brand']; ?>：</strong>
-        <?php $_from = $this->_var['brands']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'brand');if (count($_from)):
+<?php echo $this->fetch('library/category_tree.lbi'); ?>
+<?php echo $this->fetch('library/history.lbi'); ?>
+
+
+
+    
+  </div>
+  
+  
+  <div class="AreaR">
+
+	 
+	  <?php if ($this->_var['brands']['1'] || $this->_var['price_grade']['1'] || $this->_var['filter_attr_list']): ?>
+	  <div class="box">
+		 <div class="box_1">
+			<h3><span><?php echo $this->_var['lang']['goods_filter']; ?></span></h3>
+			<?php if ($this->_var['brands']['1']): ?>
+			<div class="screeBox">
+			  <strong><?php echo $this->_var['lang']['brand']; ?>：</strong>
+				<?php $_from = $this->_var['brands']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'brand');if (count($_from)):
     foreach ($_from AS $this->_var['brand']):
 ?>
-        <?php if ($this->_var['brand']['selected']): ?>
-        <span><?php echo $this->_var['brand']['brand_name']; ?></span>
-        <?php else: ?>
-        <a href="<?php echo $this->_var['brand']['url']; ?>"><?php echo $this->_var['brand']['brand_name']; ?></a>
-        <?php endif; ?>
-        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-      </div>
-      <?php endif; ?>
-      <?php if ($this->_var['price_grade']['1']): ?>
-      <div class="screeBox"> <strong><?php echo $this->_var['lang']['price']; ?>：</strong>
-        <?php $_from = $this->_var['price_grade']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'grade');if (count($_from)):
+					<?php if ($this->_var['brand']['selected']): ?>
+					<span><?php echo $this->_var['brand']['brand_name']; ?></span>
+					<?php else: ?>
+					<a href="<?php echo $this->_var['brand']['url']; ?>"><?php echo $this->_var['brand']['brand_name']; ?></a>&nbsp;
+					<?php endif; ?>
+				<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+			</div>
+			<?php endif; ?>
+			<?php if ($this->_var['price_grade']['1']): ?>
+			<div class="screeBox">
+			<strong><?php echo $this->_var['lang']['price']; ?>：</strong>
+			<?php $_from = $this->_var['price_grade']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'grade');if (count($_from)):
     foreach ($_from AS $this->_var['grade']):
 ?>
-        <?php if ($this->_var['grade']['selected']): ?>
-        <span><?php echo $this->_var['grade']['price_range']; ?></span>
-        <?php else: ?>
-        <a href="<?php echo $this->_var['grade']['url']; ?>"><?php echo $this->_var['grade']['price_range']; ?></a>
-        <?php endif; ?>
-        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-      </div>
-      <?php endif; ?>
-      <?php $_from = $this->_var['filter_attr_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'filter_attr_0_42279700_1541696900');if (count($_from)):
-    foreach ($_from AS $this->_var['filter_attr_0_42279700_1541696900']):
+				<?php if ($this->_var['grade']['selected']): ?>
+				<span><?php echo $this->_var['grade']['price_range']; ?></span>
+				<?php else: ?>
+				<a href="<?php echo $this->_var['grade']['url']; ?>"><?php echo $this->_var['grade']['price_range']; ?></a>&nbsp;
+				<?php endif; ?>
+			<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+			</div>
+			<?php endif; ?>
+			<?php $_from = $this->_var['filter_attr_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'filter_attr_0_71243100_1542138475');if (count($_from)):
+    foreach ($_from AS $this->_var['filter_attr_0_71243100_1542138475']):
 ?>
-      <div class="screeBox"> <strong><?php echo htmlspecialchars($this->_var['filter_attr_0_42279700_1541696900']['filter_attr_name']); ?> :</strong>
-        <?php $_from = $this->_var['filter_attr_0_42279700_1541696900']['attr_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'attr');if (count($_from)):
+      <div class="screeBox">
+			<strong><?php echo htmlspecialchars($this->_var['filter_attr_0_71243100_1542138475']['filter_attr_name']); ?> :</strong>
+			<?php $_from = $this->_var['filter_attr_0_71243100_1542138475']['attr_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'attr');if (count($_from)):
     foreach ($_from AS $this->_var['attr']):
 ?>
-        <?php if ($this->_var['attr']['selected']): ?>
-        <span><?php echo $this->_var['attr']['attr_value']; ?></span>
-        <?php else: ?>
-        <a href="<?php echo $this->_var['attr']['url']; ?>"><?php echo $this->_var['attr']['attr_value']; ?></a>
-        <?php endif; ?>
-        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-      </div>
+				<?php if ($this->_var['attr']['selected']): ?>
+				<span><?php echo $this->_var['attr']['attr_value']; ?></span>
+				<?php else: ?>
+				<a href="<?php echo $this->_var['attr']['url']; ?>"><?php echo $this->_var['attr']['attr_value']; ?></a>&nbsp;
+				<?php endif; ?>
+			<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+			</div>
       <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-      <div class="clear0"></div>
-    </div>
-
-    <?php endif; ?>
-    
-    
+		 </div>
+		</div>
+		<div class="blank"></div>
+	  <?php endif; ?>
+	 
+   
 <?php echo $this->fetch('library/goods_list.lbi'); ?>
-
 <?php echo $this->fetch('library/pages.lbi'); ?>
- </div>
+
+
+
+  </div>  
   
 </div>
-</div>
-<div class="blank"></div>
+
 <?php echo $this->fetch('library/page_footer.lbi'); ?>
 </body>
 </html>

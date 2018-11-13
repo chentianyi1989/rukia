@@ -29,7 +29,7 @@
     }
     </style>
 <div class="swiper-container swiper2">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper">1111111111111111111111111
             <div class="swiper-slide">{insert name='ads' id=5 num=1}</div>
             <div class="swiper-slide">{insert name='ads' id=6 num=1}</div>
             <div class="swiper-slide">{insert name='ads' id=7 num=1}</div>

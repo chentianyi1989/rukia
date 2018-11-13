@@ -1,3 +1,12 @@
-<div id="append_parent"></div>
-<?php if ($this->_var['user_info']): ?> <font > <?php echo $this->_var['lang']['hello']; ?>，<font class="f4_b"><?php echo $this->_var['user_info']['username']; ?></font>, <?php echo $this->_var['lang']['welcome_return']; ?>！ <a href="user.php"><?php echo $this->_var['lang']['user_center']; ?></a>| <a href="user.php?act=logout"><?php echo $this->_var['lang']['user_logout']; ?></a> </font> <?php else: ?>
- <?php echo $this->_var['lang']['welcome']; ?><a href="user.php">请登录 <strong></strong></a>&nbsp;|&nbsp;&nbsp;<a href="user.php?act=register">免费注册</a> <?php endif; ?>
+
+<?php if ($this->_var['user_info']): ?>
+ 
+<span id="topWelcomeDiv" class="heaTopHighlight">
+<a href="user.php"> <?php echo $this->_var['lang']['hello']; ?>，<font style="color: #EB008D; font-weight:bold"><?php echo $this->_var['user_info']['username']; ?>&nbsp;</font>，<?php echo $this->_var['lang']['welcome_return']; ?>！</a>
+<a href="user.php"><?php echo $this->_var['lang']['user_center']; ?></a>
+<a href="user.php?act=logout" class="bgNone" target="_parent" onclick=""><?php echo $this->_var['lang']['user_logout']; ?></a></span>
+<?php else: ?>
+<span id="topLoginDiv" class="heaTopHighlight" style="display:inline-block;">
+<a href="user.php" class="bgNone" >请登录</a><a href="user.php?act=register"  class="popHover">免费注册</a>
+</span>
+<?php endif; ?>

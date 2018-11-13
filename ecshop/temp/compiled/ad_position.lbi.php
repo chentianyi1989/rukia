@@ -6,3 +6,5 @@ $k = array (
 );
 echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
 ?>
+
+<div class="blank"></div>

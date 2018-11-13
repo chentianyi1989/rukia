@@ -1,27 +1,36 @@
- 
 <?php if ($this->_var['hot_goods']): ?>
 <?php if ($this->_var['cat_rec_sign'] != 1): ?>
-<div id="show_hot_area" class="clearfix goodsBox all_mid all_ms">
+<div class="xm-box">
+<h4 class="title"><span>热卖商品</span> <a class="more" href="search.php?intro=hot"></a></h4>
+<div class="blank"></div>
+<div id="show_hot_area" class="clearfix">
   <?php endif; ?>
-  <?php $_from = $this->_var['hot_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_51880300_1541696888');if (count($_from)):
-    foreach ($_from AS $this->_var['goods_0_51880300_1541696888']):
+  <?php $_from = $this->_var['hot_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_54302600_1542138371');if (count($_from)):
+    foreach ($_from AS $this->_var['goods_0_54302600_1542138371']):
 ?>
- <a class="goodsItem" href="<?php echo $this->_var['goods_0_51880300_1541696888']['url']; ?>"> <div  class="img-box"><img src="<?php echo $this->_var['goods_0_51880300_1541696888']['thumb']; ?>" alt="<?php echo htmlspecialchars($this->_var['goods_0_51880300_1541696888']['name']); ?>" class="goodsimg" /></div>
-  <div class="goods-brief"><?php echo sub_str($this->_var['goods_0_51880300_1541696888']['brief'],20); ?></div>
-    <div class="gos-title"><?php echo htmlspecialchars($this->_var['goods_0_51880300_1541696888']['short_name']); ?></div> 
-  <div class="prices">
-      <?php if ($this->_var['goods_0_51880300_1541696888']['promote_price'] != ""): ?>
-    <font class="shop_s"><?php echo $this->_var['lang']['promote_price']; ?><b><?php echo $this->_var['goods_0_51880300_1541696888']['promote_price']; ?></b></font>
-    <?php else: ?>
-    <font class="shop_s"><b><?php echo $this->_var['goods_0_51880300_1541696888']['shop_price']; ?></b></font>
-    <?php endif; ?>
-  </div>
-   
-
-  </a>
+  <div class="goodsItem">
+       
+           <a href="<?php echo $this->_var['goods_0_54302600_1542138371']['url']; ?>"><img src="<?php echo $this->_var['goods_0_54302600_1542138371']['thumb']; ?>" alt="<?php echo htmlspecialchars($this->_var['goods_0_54302600_1542138371']['name']); ?>" class="goodsimg" /></a><br />
+           <p class="f1"><a href="<?php echo $this->_var['goods_0_54302600_1542138371']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_54302600_1542138371']['name']); ?>"><?php echo $this->_var['goods_0_54302600_1542138371']['short_style_name']; ?></a></p>
+           
+           
+ 市场价：<font class="market"><?php echo $this->_var['goods_0_54302600_1542138371']['market_price']; ?></font> <br/>
+      
+           本店价：<font class="f1">
+           <?php if ($this->_var['goods_0_54302600_1542138371']['promote_price'] != ""): ?>
+          <?php echo $this->_var['goods_0_54302600_1542138371']['promote_price']; ?>
+          <?php else: ?>
+          <?php echo $this->_var['goods_0_54302600_1542138371']['shop_price']; ?>
+          <?php endif; ?>
+           </font>      
+		    
+        </div>
   <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+ 
   <?php if ($this->_var['cat_rec_sign'] != 1): ?>
-  <div class="clear0"></div>
-</div> <div class="clear10"></div>
-<?php endif; ?>
+  </div>
+
+</div>
+<div class="blank"></div>
+  <?php endif; ?>
 <?php endif; ?>

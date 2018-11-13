@@ -8,89 +8,63 @@
 
 <title><?php echo $this->_var['page_title']; ?></title>
 
+
+
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="<?php echo $this->_var['ecs_css_path']; ?>" rel="stylesheet" type="text/css" />
 <link rel="alternate" type="application/rss+xml" title="RSS|<?php echo $this->_var['page_title']; ?>" href="<?php echo $this->_var['feed_url']; ?>" />
-<link rel="stylesheet" type="text/css" href="themes/default/images/swiper.min.css">
-<script language='javascript' src='themes/default/js/swiper.min.js' type='text/javascript' charset='utf-8'></script>
 
 <?php echo $this->smarty_insert_scripts(array('files'=>'common.js,index.js')); ?>
 </head>
-<body>
+<body class="index_page">
 <?php echo $this->fetch('library/page_header.lbi'); ?>
-<script>
-if (Object.prototype.toJSONString){
-      var oldToJSONString = Object.toJSONString;
-      Object.prototype.toJSONString = function(){
-        if (arguments.length > 0){
-          return false;
-        }else{
-          return oldToJSONString.apply(this, arguments);
-        }
-}}</script>
-<div class="indexpage clearfix">
-  <div class="index-cat">
-    <?php echo $this->fetch('library/index_category_tree.lbi'); ?> 
+
+<div class="block clearfix">
+<div style="width:160px; float:left">
+<div class="category_left">
+<?php echo $this->fetch('library/category_tree_index.lbi'); ?></div>
+
+
+
   </div>
-  <div class="index-banner"><?php echo $this->fetch('library/index_banner.lbi'); ?> </div>
+
+<div style="float:right; width:837px; height:333px"> 
+<?php echo $this->fetch('library/index_ad.lbi'); ?>
+ 
+ 
+
+<?php $this->assign('ads_id','1'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
+
+ 
 </div>
-<div class="indexpage clearfix index-ad">
-  <div class="ad-tg">
-    
-<?php $this->assign('ads_id','4'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
+ 
+  
+    <div class="blank"></div> 
+ 
+  
+  <div class="goodsBox_1">
+  
 
-  </div>
-  <div class="ad-lb">
-    <?php echo $this->fetch('library/index_lad.lbi'); ?>
-  </div>
-</div>
-<div class="index-body">
-  <div class="indexpage">
-    <div class="body-goods">
-      <div class="goods-title">1F 家用电器</div>
-      <div class="clearfix goods-wrap">
-        <div class="goods-leftad">
-          <?php echo $this->fetch('library/f1_ad.lbi'); ?>
-        </div>
-        <div class="goods-right">
-            
-<?php $this->assign('cat_goods',$this->_var['cat_goods_24']); ?><?php $this->assign('goods_cat',$this->_var['goods_cat_24']); ?><?php echo $this->fetch('library/cat_goods.lbi'); ?>
-
-        </div>
-      </div>
-      <div class="goods-title">2F 数码时尚</div>
-      <div class="clearfix goods-wrap">
-        <div class="goods-leftad">
-          <?php echo $this->fetch('library/f2_ad.lbi'); ?>
-        </div>
-        <div class="goods-right">
-            
-<?php $this->assign('cat_goods',$this->_var['cat_goods_24']); ?><?php $this->assign('goods_cat',$this->_var['goods_cat_24']); ?><?php echo $this->fetch('library/cat_goods.lbi'); ?>
-
-        </div>
-      </div>
-      <div class="goods-title">3F 家居生活</div>
-      <div class="clearfix goods-wrap">
-        <div class="goods-leftad">
-          <?php echo $this->fetch('library/f3_ad.lbi'); ?>
-        </div>
-        <div class="goods-right">
-            
-<?php $this->assign('cat_goods',$this->_var['cat_goods_24']); ?><?php $this->assign('goods_cat',$this->_var['goods_cat_24']); ?><?php echo $this->fetch('library/cat_goods.lbi'); ?>
-
-        </div>
-      </div>
-      <div class="goods-title">热门商品推荐</div>
-      <div class="clearfix goods-wrap hot-goods">
-            
+  
+  
+<?php $this->assign('ads_id','1'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php echo $this->fetch('library/recommend_new.lbi'); ?>
 <?php echo $this->fetch('library/recommend_hot.lbi'); ?>
+<?php echo $this->fetch('library/recommend_best.lbi'); ?>
 
-      </div>
-
+  </div> 
+  
     </div>
-  </div>
-</div>
+  
+  
+  
+ 
+
+
+    <?php echo $this->fetch('library/help.lbi'); ?>
+ 
+
 <?php echo $this->fetch('library/page_footer.lbi'); ?>
 </body>
 </html>
