@@ -1,4 +1,4 @@
-<?php exit;?>a:3:{s:8:"template";a:10:{i:0;s:65:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/index.dwt";i:1;s:79:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/page_header.lbi";i:2;s:87:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/category_tree_index.lbi";i:3;s:76:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/index_ad.lbi";i:4;s:79:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/ad_position.lbi";i:5;s:81:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/recommend_new.lbi";i:6;s:81:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/recommend_hot.lbi";i:7;s:82:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/recommend_best.lbi";i:8;s:72:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/help.lbi";i:9;s:79:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/page_footer.lbi";}s:7:"expires";i:1542143049;s:8:"maketime";i:1542139449;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php exit;?>a:3:{s:8:"template";a:10:{i:0;s:65:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/index.dwt";i:1;s:79:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/page_header.lbi";i:2;s:87:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/category_tree_index.lbi";i:3;s:76:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/index_ad.lbi";i:4;s:79:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/ad_position.lbi";i:5;s:81:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/recommend_new.lbi";i:6;s:81:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/recommend_hot.lbi";i:7;s:82:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/recommend_best.lbi";i:8;s:72:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/help.lbi";i:9;s:79:"D:/workspace/ecshop/rukia/ecshop/themes/ecmoban_sifulan/library/page_footer.lbi";}s:7:"expires";i:1542357350;s:8:"maketime";i:1542353750;}<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta name="Generator" content="ECSHOP v4.0.0" />
@@ -124,9 +124,7 @@ catch (e) {
   <div id="category_tree">
  <p class="fmlTitle"><em></em></p>
   <dl class="clearfix" >
-             <div  class="dt" onMouseOver="sw_nav2(1,1);" onMouseOut="sw_nav2(1,0);" 
-         
-        >
+             <div  class="dt" onMouseOver="sw_nav2(1,1);" onMouseOut="sw_nav2(1,0);" >
         
         <div id="HandleLI2_1">
         <a    class="a    
@@ -141,9 +139,7 @@ catch (e) {
         
  
 </div>
-        <div  class="dt" onMouseOver="sw_nav2(2,1);" onMouseOut="sw_nav2(2,0);" 
-         
-        >
+        <div  class="dt" onMouseOver="sw_nav2(2,1);" onMouseOut="sw_nav2(2,0);" >
         
         <div id="HandleLI2_2">
         <a    class="a    
@@ -159,9 +155,7 @@ catch (e) {
         
  
 </div>
-        <div  class="dt" onMouseOver="sw_nav2(3,1);" onMouseOut="sw_nav2(3,0);" 
-         
-        >
+        <div  class="dt" onMouseOver="sw_nav2(3,1);" onMouseOut="sw_nav2(3,0);" >
         
         <div id="HandleLI2_3">
         <a    class="a    
@@ -176,9 +170,7 @@ catch (e) {
         
  
 </div>
-        <div  class="dt" onMouseOver="sw_nav2(4,1);" onMouseOut="sw_nav2(4,0);" 
-         
-        >
+        <div  class="dt" onMouseOver="sw_nav2(4,1);" onMouseOut="sw_nav2(4,0);" >
         
         <div id="HandleLI2_4">
         <a    class="a    
@@ -194,9 +186,7 @@ catch (e) {
         
  
 </div>
-        <div  class="dt" onMouseOver="sw_nav2(5,1);" onMouseOut="sw_nav2(5,0);" 
-         
-        >
+        <div  class="dt" onMouseOver="sw_nav2(5,1);" onMouseOut="sw_nav2(5,0);" >
         
         <div id="HandleLI2_5">
         <a    class="a    
@@ -211,9 +201,7 @@ catch (e) {
         
  
 </div>
-        <div  class="dt" onMouseOver="sw_nav2(6,1);" onMouseOut="sw_nav2(6,0);" 
-         
-        >
+        <div  class="dt" onMouseOver="sw_nav2(6,1);" onMouseOut="sw_nav2(6,0);" >
         
         <div id="HandleLI2_6">
         <a    class="a    
@@ -229,9 +217,7 @@ catch (e) {
         
  
 </div>
-        <div  class="dt" onMouseOver="sw_nav2(7,1);" onMouseOut="sw_nav2(7,0);" 
-         
-        >
+        <div  class="dt" onMouseOver="sw_nav2(7,1);" onMouseOut="sw_nav2(7,0);" >
         
         <div id="HandleLI2_7">
         <a    class="a    
@@ -246,9 +232,7 @@ catch (e) {
         
  
 </div>
-        <div  class="dt" onMouseOver="sw_nav2(8,1);" onMouseOut="sw_nav2(8,0);" 
-         
-        >
+        <div  class="dt" onMouseOver="sw_nav2(8,1);" onMouseOut="sw_nav2(8,0);" >
         
         <div id="HandleLI2_8">
         <a    class="a    
@@ -264,9 +248,7 @@ catch (e) {
         
  
 </div>
-        <div  class="dt" onMouseOver="sw_nav2(9,1);" onMouseOut="sw_nav2(9,0);" 
-         
-        >
+        <div  class="dt" onMouseOver="sw_nav2(9,1);" onMouseOut="sw_nav2(9,0);" >
         
         <div id="HandleLI2_9">
         <a    class="a    
@@ -284,11 +266,9 @@ catch (e) {
  
 </dl>
 </div>
-<div class="blank"></div>
-</div>
+<div class="blank"></div></div>
   </div>
 <div style="float:right; width:837px; height:333px"> 
- 
 <style type="text/css"> 
 .container, .container *{margin:0; padding:0;}
 .container{width:837px; height:333px; overflow:hidden;position:relative;}
@@ -327,12 +307,24 @@ catch (e) {
 </style>
 <div class="container" id="idTransformView">
   <ul class="slider" id="idSlider">
-  	111111111111111111
+      <li><a href="http://yunqi.shopex.cn" target="_blank"><img src="data/afficheimg/20161114nraqzu.jpg"/></a></li>
+        <li><a href="http://yunqi.shopex.cn" target="_blank"><img src="data/afficheimg/20161114prfywc.jpg"/></a></li>
+        <li><a href="http://yunqi.shopex.cn" target="_blank"><img src="data/afficheimg/20161114uxmgov.png"/></a></li>
+        <li><a href="http://yunqi.shopex.cn" target="_blank"><img src="data/afficheimg/20161114ypdlyr.jpg"/></a></li>
+    
   </ul>
   <ul class="num" id="idNum">
  
     
-         
+          <li>
+    1    </li> 
+         <li>
+    2    </li> 
+         <li>
+    3    </li> 
+         <li>
+    4    </li> 
+        
   </ul>
 </div>
 <script type="text/javascript">
@@ -700,9 +692,7 @@ window.onload=function(){
   
   
  
-    
-<a class="ecmoban" href="http://www.ecmoban.com" target="_blank" title="ecshop模板堂">ecshop模板堂</a>
- 
+    <a class="ecmoban" href="http://www.ecmoban.com" target="_blank" title="ecshop模板堂">ecshop模板堂</a> 
 <div id="VjiaFooter" class="block"> 
    <div class="helpTitBg clearfix">
     <div id="fraFoot">
@@ -816,7 +806,7 @@ function check_email()
 <div style=" line-height:22px;">
  
   &copy; 2005-2018 ECSHOP 版权所有，并保留所有权利。  <br /> 
-<a href="http://xyunqi.com/products/ecshop?from=nav" target="_blank" style=" font-family:Verdana; font-size:11px;">Powered&nbsp;by&nbsp;<strong><span style="color: #3366FF">ECShop</span>&nbsp;<span style="color: #FF9966">v4.0.0</span></strong></a>&nbsp;<a href="http://www.ecshop.com/license.php?product=ecshop_b2c&url=http%3A%2F%2F127.0.0.1%2F" target="_blank"
+<a href="http://xyunqi.com/products/ecshop?from=nav" target="_blank" style=" font-family:Verdana; font-size:11px;">Powered&nbsp;by&nbsp;<strong><span style="color: #3366FF">ECShop</span>&nbsp;<span style="color: #FF9966">v4.0.0</span></strong></a>&nbsp;<a href="http://www.ecshop.com/license.php?product=ecshop_b2c&url=http%3A%2F%2Flocalhost%2F" target="_blank"
 >&nbsp;&nbsp;Licensed</a><br />
     	
 	
@@ -927,7 +917,5 @@ return; //结束函式
 document.getElementById("divMenu").style.display = "block";
 document.getElementById("divOnline").style.display = "none";
 }
-</script>
- 
-</body>
+</script></body>
 </html>

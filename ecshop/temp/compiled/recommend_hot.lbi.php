@@ -5,22 +5,22 @@
 <div class="blank"></div>
 <div id="show_hot_area" class="clearfix">
   <?php endif; ?>
-  <?php $_from = $this->_var['hot_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_54302600_1542138371');if (count($_from)):
-    foreach ($_from AS $this->_var['goods_0_54302600_1542138371']):
+  <?php $_from = $this->_var['hot_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_38326200_1542353751');if (count($_from)):
+    foreach ($_from AS $this->_var['goods_0_38326200_1542353751']):
 ?>
   <div class="goodsItem">
        
-           <a href="<?php echo $this->_var['goods_0_54302600_1542138371']['url']; ?>"><img src="<?php echo $this->_var['goods_0_54302600_1542138371']['thumb']; ?>" alt="<?php echo htmlspecialchars($this->_var['goods_0_54302600_1542138371']['name']); ?>" class="goodsimg" /></a><br />
-           <p class="f1"><a href="<?php echo $this->_var['goods_0_54302600_1542138371']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_54302600_1542138371']['name']); ?>"><?php echo $this->_var['goods_0_54302600_1542138371']['short_style_name']; ?></a></p>
+           <a href="<?php echo $this->_var['goods_0_38326200_1542353751']['url']; ?>"><img src="<?php echo $this->_var['goods_0_38326200_1542353751']['thumb']; ?>" alt="<?php echo htmlspecialchars($this->_var['goods_0_38326200_1542353751']['name']); ?>" class="goodsimg" /></a><br />
+           <p class="f1"><a href="<?php echo $this->_var['goods_0_38326200_1542353751']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_38326200_1542353751']['name']); ?>"><?php echo $this->_var['goods_0_38326200_1542353751']['short_style_name']; ?></a></p>
            
            
- 市场价：<font class="market"><?php echo $this->_var['goods_0_54302600_1542138371']['market_price']; ?></font> <br/>
+ 市场价：<font class="market"><?php echo $this->_var['goods_0_38326200_1542353751']['market_price']; ?></font> <br/>
       
            本店价：<font class="f1">
-           <?php if ($this->_var['goods_0_54302600_1542138371']['promote_price'] != ""): ?>
-          <?php echo $this->_var['goods_0_54302600_1542138371']['promote_price']; ?>
+           <?php if ($this->_var['goods_0_38326200_1542353751']['promote_price'] != ""): ?>
+          <?php echo $this->_var['goods_0_38326200_1542353751']['promote_price']; ?>
           <?php else: ?>
-          <?php echo $this->_var['goods_0_54302600_1542138371']['shop_price']; ?>
+          <?php echo $this->_var['goods_0_38326200_1542353751']['shop_price']; ?>
           <?php endif; ?>
            </font>      
 		    

@@ -592,9 +592,9 @@ text-align: center;
 font-size: 12px;}
 .fmlTitle {
 padding: 0;
-height: 40px;
+height: 10px;
 margin: 10px 0 0 8px;
-background: url(images/spritTitleHp130417.gif) no-repeat 0 -833px;
+/* background: url(images/spritTitleHp130417.gif) no-repeat 0 -833px; */
 width: 148px;
 }
 .category_left{float: left;

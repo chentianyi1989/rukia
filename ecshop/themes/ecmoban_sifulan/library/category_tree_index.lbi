@@ -24,9 +24,7 @@
  <p class="fmlTitle"><em></em></p>
   <dl class="clearfix" >
      <!--{foreach from=$categories item=cat name=no}-->
-        <div  class="dt" onMouseOver="sw_nav2({$smarty.foreach.no.iteration},1);" onMouseOut="sw_nav2({$smarty.foreach.no.iteration},0);" 
-         
-        >
+        <div  class="dt" onMouseOver="sw_nav2({$smarty.foreach.no.iteration},1);" onMouseOut="sw_nav2({$smarty.foreach.no.iteration},0);" >
         
         <div id="HandleLI2_{$smarty.foreach.no.iteration}">
         <a    class="a    
