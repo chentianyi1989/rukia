@@ -1,150 +1,165 @@
-<div id="VjiaFooter" class="block"> 
-
-   <div class="helpTitBg clearfix">
-    <div id="fraFoot">
-  <div class="fooQR clearFix">
-			<p class="fooQRtitle fooQRborder">移动丝芙兰</p>
-			<p class="fooQRwx fooQRborder">丝芙兰微信二维码</p>
-			<p class="fooQRiphone fooQRborder">丝芙兰Iphone客户端</p>
-			<p class="fooQRandroid">丝芙兰Android客户端</p>
-		</div>
-
-</div>
-
-<div class="fooTelMail">
-			<em>网上客服电子信箱：online@qq.com.cn</em><p>网上订购咨询热线：400 000 0000 （AM9:00-PM22:00）</p>
-           
-       </div>
-  
-<?php if ($this->_var['helps']): ?>
-<?php $_from = $this->_var['helps']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'help_cat');if (count($_from)):
+<div class="g-footer">
+  <div class="serverbox">
+    <div class="sn-server">
+      <div class="serverlist"> 
+        <?php if ($this->_var['helps']): ?> 
+        <?php $_from = $this->_var['helps']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'help_cat');$this->_foreach['no'] = array('total' => count($_from), 'iteration' => 0);
+if ($this->_foreach['no']['total'] > 0):
     foreach ($_from AS $this->_var['help_cat']):
+        $this->_foreach['no']['iteration']++;
 ?>
-<dl class="fooLink">
-  <dt><a href='<?php echo $this->_var['help_cat']['cat_id']; ?>' title="<?php echo $this->_var['help_cat']['cat_name']; ?>"><?php echo $this->_var['help_cat']['cat_name']; ?></a></dt>
-  <?php $_from = $this->_var['help_cat']['article']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'item');if (count($_from)):
+        <dl  class=" g-serverlist-first_<?php echo $this->_foreach['no']['iteration']; ?> ">
+          <dt ><a href='<?php echo $this->_var['help_cat']['cat_id']; ?>' title="<?php echo $this->_var['help_cat']['cat_name']; ?>"><?php echo $this->_var['help_cat']['cat_name']; ?></a></dt>
+          <?php $_from = $this->_var['help_cat']['article']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'item');if (count($_from)):
     foreach ($_from AS $this->_var['item']):
 ?>
-  <dd><a href="<?php echo $this->_var['item']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['item']['title']); ?>"><?php echo $this->_var['item']['short_title']; ?></a></dd>
-  <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-</dl>
-<?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-<?php endif; ?>
-
-    <div class="flRight"><img src="themes/ecmoban_sifulan/images/rssImg0315.jpg" alt="" class="rssTitle">
-			<form name="emailform1" method="post">
-				快来索取最新美容潮流，季节护肤小贴士：
-
- <div class="rssTxt">
-    <input type="text" id="user_email" class="inputBgs f_l" />
-     <input type="button" class="bnt_blue_dy f_l" onclick="add_email_list();" />
- </div>
-
-<script type="text/javascript">
-var email = document.getElementById('user_email');
-function add_email_list()
-{
-  if (check_email())
-  {
-    Ajax.call('user.php?act=email_list&job=add&email=' + email.value, '', rep_add_email_list, 'GET', 'TEXT');
-  }
-}
-function rep_add_email_list(text)
-{
-  alert(text);
-}
-function cancel_email_list()
-{
-  if (check_email())
-  {
-    Ajax.call('user.php?act=email_list&job=del&email=' + email.value, '', rep_cancel_email_list, 'GET', 'TEXT');
-  }
-}
-function rep_cancel_email_list(text)
-{
-  alert(text);
-}
-function check_email()
-{
-  if (Utils.isEmail(email.value))
-  {
-    return true;
-  }
-  else
-  {
-    alert('<?php echo $this->_var['lang']['email_invalid']; ?>');
-    return false;
-  }
-}
-</script>
-
-			</form></div>
-   </div>
-
- 
-
-
- 
-<?php if ($this->_var['img_links'] || $this->_var['txt_links']): ?>
- <div class="box_1">
-  <div class="links clearfix">
-    <?php $_from = $this->_var['img_links']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'link');if (count($_from)):
-    foreach ($_from AS $this->_var['link']):
-?>
-    <a href="<?php echo $this->_var['link']['url']; ?>" target="_blank" title="<?php echo $this->_var['link']['name']; ?>"><img src="<?php echo $this->_var['link']['logo']; ?>" alt="<?php echo $this->_var['link']['name']; ?>" border="0" /></a>
-    <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-    <?php if ($this->_var['txt_links']): ?>
-    <?php $_from = $this->_var['txt_links']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'link');if (count($_from)):
-    foreach ($_from AS $this->_var['link']):
-?>
-    [<a href="<?php echo $this->_var['link']['url']; ?>" target="_blank" title="<?php echo $this->_var['link']['name']; ?>"><?php echo $this->_var['link']['name']; ?></a>]
-    <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-    <?php endif; ?>
-  </div>
- </div>
- <div class="blank"></div>
-<?php endif; ?>
-
-<div class="copyRight"> 
-<div class="f_nav">
-   <?php if ($this->_var['navigator_list']['bottom']): ?>
-   <?php $_from = $this->_var['navigator_list']['bottom']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav_0_62346900_1542353751');$this->_foreach['nav_bottom_list'] = array('total' => count($_from), 'iteration' => 0);
-if ($this->_foreach['nav_bottom_list']['total'] > 0):
-    foreach ($_from AS $this->_var['nav_0_62346900_1542353751']):
-        $this->_foreach['nav_bottom_list']['iteration']++;
-?>
-        <a href="<?php echo $this->_var['nav_0_62346900_1542353751']['url']; ?>" <?php if ($this->_var['nav_0_62346900_1542353751']['opennew'] == 1): ?> target="_blank" <?php endif; ?>><?php echo $this->_var['nav_0_62346900_1542353751']['name']; ?></a>
-         <?php if (! ($this->_foreach['nav_bottom_list']['iteration'] == $this->_foreach['nav_bottom_list']['total'])): ?>
-           |
+          <dd><a href="<?php echo $this->_var['item']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['item']['title']); ?>"><?php echo $this->_var['item']['short_title']; ?></a></dd>
+          <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+        </dl>
+        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?> 
         <?php endif; ?>
-      <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-  <?php endif; ?>
-</div>
-
-
-<div style=" line-height:22px;">
- 
-  <?php if ($this->_var['icp_number']): ?>
-  <?php echo $this->_var['lang']['icp_number']; ?>:<a href="http://www.miibeian.gov.cn/" target="_blank"><?php echo $this->_var['icp_number']; ?></a><br />
-  <?php endif; ?>
-<?php echo $this->_var['copyright']; ?>
- <?php echo $this->_var['shop_address']; ?> <?php echo $this->_var['shop_postcode']; ?><br /> 
-<?php $_from = $this->_var['lang']['p_y']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'pv');if (count($_from)):
+        <dl class="g-sncs">
+          <dt>苏宁众包 <img class="g-sncs-new" src="http://image.suning.cn/public/images/nav-new.gif" alt=""> </dt>
+          <dd style="width: 170px;
+background: url(themes/ecmoban_suning/images/footsprite.png) no-repeat -205px -392px;">
+           以苏宁全渠道包销为主要特点，整合全社会众包资源，扶持创新企业，推广创新产品。 <a  class="g-snsc-link" target="_blank" href="#">了解更多</a> 
+          </dd>
+        </dl>
+      </div>
+      <div class="otherinfo">
+        <dl class="netserver">
+          <dt>网络服务</dt>
+          <dd>我们在全国300个城市有<a rel="nofollow"  target="_blank" href="#">1600</a>家门店<a  target="_blank" href="#">3000</a>个服务点为您提供最贴心的阳光服务！</dd>
+        </dl>
+        <dl class="searchsn">
+          <dt> <a  href="#" target="_blank">搜索您身边的苏宁</a> </dt>
+          <dd>搜索您身边的苏宁</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="specialbox">
+    <div class="sn-specialbox" style="overflow:hidden"> <a class="slink1" href="#" title="正品有保证" target="_blank">正品有保证</a> <a  class="slink2" href="#" title="百城半日达" target="_blank">百城半日达</a> <a  class="slink3" href="#" title="服务一站式" target="_blank">服务一站式</a> </div>
+  </div>
+  <div class="copyrightbox">
+    <div class="copyright"> 
+       
+      <?php if ($this->_var['img_links'] || $this->_var['txt_links']): ?>
+      <div>
+      <dl class="sncompany box_1" style="text-align:left">
+        <dd class=""> 
+          <?php $_from = $this->_var['img_links']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'link');$this->_foreach['bottom'] = array('total' => count($_from), 'iteration' => 0);
+if ($this->_foreach['bottom']['total'] > 0):
+    foreach ($_from AS $this->_var['link']):
+        $this->_foreach['bottom']['iteration']++;
+?> 
+          <a href="<?php echo $this->_var['link']['url']; ?>" target="_blank" title="<?php echo $this->_var['link']['name']; ?>"><img src="<?php echo $this->_var['link']['logo']; ?>" alt="<?php echo $this->_var['link']['name']; ?>" border="0" /></a><?php if (! ($this->_foreach['bottom']['iteration'] == $this->_foreach['bottom']['total'])): ?><span>|</span><?php endif; ?> 
+          <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?> 
+          <?php if ($this->_var['txt_links']): ?> 
+          <?php $_from = $this->_var['txt_links']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'link');$this->_foreach['bottom'] = array('total' => count($_from), 'iteration' => 0);
+if ($this->_foreach['bottom']['total'] > 0):
+    foreach ($_from AS $this->_var['link']):
+        $this->_foreach['bottom']['iteration']++;
+?> 
+          <a href="<?php echo $this->_var['link']['url']; ?>" target="_blank" title="<?php echo $this->_var['link']['name']; ?>"><?php echo $this->_var['link']['name']; ?></a> <?php if (! ($this->_foreach['bottom']['iteration'] == $this->_foreach['bottom']['total'])): ?><span>|</span><?php endif; ?> 
+          <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?> 
+          <?php endif; ?> 
+        </dd>
+      </dl>
+      </div>
+      <?php endif; ?> 
+       
+      
+      
+      
+      <p class="snlinks"> 
+        <?php if ($this->_var['navigator_list']['bottom']): ?> 
+        <?php $_from = $this->_var['navigator_list']['bottom']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav_0_62610500_1543132708');$this->_foreach['nav_bottom_list'] = array('total' => count($_from), 'iteration' => 0);
+if ($this->_foreach['nav_bottom_list']['total'] > 0):
+    foreach ($_from AS $this->_var['nav_0_62610500_1543132708']):
+        $this->_foreach['nav_bottom_list']['iteration']++;
+?> 
+        <a href="<?php echo $this->_var['nav_0_62610500_1543132708']['url']; ?>" <?php if ($this->_var['nav_0_62610500_1543132708']['opennew'] == 1): ?> target="_blank" <?php endif; ?>><?php echo $this->_var['nav_0_62610500_1543132708']['name']; ?></a> 
+        <?php if (! ($this->_foreach['nav_bottom_list']['iteration'] == $this->_foreach['nav_bottom_list']['total'])): ?> 
+        <span>|</span> 
+        <?php endif; ?> 
+        <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?> 
+        <?php endif; ?> 
+      </p>
+      
+       
+      
+      <div id="footer" style="height:1px; width:1px; height:1px; overflow:hidden; background:none;">
+        <div class="text"> <?php echo $this->_var['copyright']; ?><br />
+          <?php echo $this->_var['shop_address']; ?> <?php echo $this->_var['shop_postcode']; ?> 
+          <?php if ($this->_var['service_phone']): ?> 
+          Tel: <?php echo $this->_var['service_phone']; ?> 
+          <?php endif; ?> 
+          <?php if ($this->_var['service_email']): ?> 
+          E-mail: <?php echo $this->_var['service_email']; ?><br />
+          <?php endif; ?> 
+          <?php $_from = $this->_var['qq']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'im');if (count($_from)):
+    foreach ($_from AS $this->_var['im']):
+?> 
+          <?php if ($this->_var['im']): ?> 
+          <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin=<?php echo $this->_var['im']; ?>&amp;Site=<?php echo $this->_var['shop_name']; ?>&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:<?php echo $this->_var['im']; ?>:4" height="16" border="0" alt="QQ" /> <?php echo $this->_var['im']; ?></a> 
+          <?php endif; ?> 
+          <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?> 
+          <?php $_from = $this->_var['ww']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'im');if (count($_from)):
+    foreach ($_from AS $this->_var['im']):
+?> 
+          <?php if ($this->_var['im']): ?> 
+          <a href="http://amos1.taobao.com/msg.ww?v=2&uid=<?php echo urlencode($this->_var['im']); ?>&s=2" target="_blank"><img src="http://amos1.taobao.com/online.ww?v=2&uid=<?php echo urlencode($this->_var['im']); ?>&s=2" width="16" height="16" border="0" alt="淘宝旺旺" /><?php echo $this->_var['im']; ?></a> 
+          <?php endif; ?> 
+          <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?> 
+          <?php $_from = $this->_var['ym']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'im');if (count($_from)):
+    foreach ($_from AS $this->_var['im']):
+?> 
+          <?php if ($this->_var['im']): ?> 
+          <a href="http://edit.yahoo.com/config/send_webmesg?.target=<?php echo $this->_var['im']; ?>n&.src=pg" target="_blank"><img src="themes/ecmoban_suning/images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> <?php echo $this->_var['im']; ?></a> 
+          <?php endif; ?> 
+          <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?> 
+          <?php $_from = $this->_var['msn']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'im');if (count($_from)):
+    foreach ($_from AS $this->_var['im']):
+?> 
+          <?php if ($this->_var['im']): ?> 
+          <img src="themes/ecmoban_suning/images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact=<?php echo $this->_var['im']; ?>"><?php echo $this->_var['im']; ?></a> 
+          <?php endif; ?> 
+          <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?> 
+          <?php $_from = $this->_var['skype']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'im');if (count($_from)):
+    foreach ($_from AS $this->_var['im']):
+?> 
+          <?php if ($this->_var['im']): ?> 
+          <img src="http://mystatus.skype.com/smallclassic/<?php echo urlencode($this->_var['im']); ?>" alt="Skype" /><a href="skype:<?php echo urlencode($this->_var['im']); ?>?call"><?php echo $this->_var['im']; ?></a> 
+          <?php endif; ?> 
+          <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?><br />
+          <?php if ($this->_var['icp_number']): ?> 
+          <?php echo $this->_var['lang']['icp_number']; ?>:<a href="http://www.miibeian.gov.cn/" target="_blank"><?php echo $this->_var['icp_number']; ?></a><br />
+          <?php endif; ?> 
+          <?php 
+$k = array (
+  'name' => 'query_info',
+);
+echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
+?><br />
+          <?php $_from = $this->_var['lang']['p_y']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'pv');if (count($_from)):
     foreach ($_from AS $this->_var['pv']):
 ?><?php echo $this->_var['pv']; ?><?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?><?php echo $this->_var['licensed']; ?><br />
-    <?php if ($this->_var['stats_code']): ?>
-    <div align="center"><?php echo $this->_var['stats_code']; ?></div>
-    <?php endif; ?>
-	
-	
+          <?php if ($this->_var['stats_code']): ?>
+          <div align="left"><?php echo $this->_var['stats_code']; ?></div>
+          <?php endif; ?>
+          <div align="left"  id="rss"><a href="<?php echo $this->_var['feed_url']; ?>"><img src="themes/ecmoban_suning/images/xml_rss2.gif" alt="rss" /></a></div>
+        </div>
+      </div>
+      <p class="rights"> © 2005-2014 ecshop模板堂(ecmoban.com) 版权所有，并保留所有权利。 常年法律顾问：上海华宏律师事务所</p>
+      <div class="subfooter"> <a  href="#" title="可信网站示范单位" target="_blank"><img src="http://image4.suning.cn/images/ShoppingArea/Common/morelogo2.png"></a> <a  href="#" title="诚信网站" target="_blank"><img src="http://image5.suning.cn/images/ShoppingArea/Common/morelogo6.png"></a> <a  href="#" title="电子营业执照" target="_blank"><img src="http://image1.suning.cn/images/ShoppingArea/Common/morelogo7.png"></a> </div>
+      <Div class="blank"></Div>
+      <div align="center"><a href=" http://www.ecmoban.com" target="_blank"><img src="themes/ecmoban_suning/images/ecmoban.gif" alt="ECShop模板" /></a></div>
+    </div>
+  </div>
 </div>
-<div style="margin:3px auto; height:20px; text-align:center">技术支持: <a href="http://www.ecmoban.com/">上海商创网络科技有限公司</a> </div>
-<div align="center"  ><a href=" http://www.ecmoban.com" target="_blank"><img src="themes/ecmoban_sifulan/images/ecmoban.gif" alt="ECShop模板" /></a></div>
- <div class="blank"></div>  
- </div>
- </div>
 
-
+<div class="blank"></div>
 
 
 
@@ -153,7 +168,9 @@ if ($this->_foreach['nav_bottom_list']['total'] > 0):
 
   
 
-<link href="themes/ecmoban_sifulan/qq/images/qq.css" rel="stylesheet" type="text/css" />
+
+
+<link href="ecmoban_qq/images/qq.css" rel="stylesheet" type="text/css" />
 <div class="QQbox" id="divQQbox" style="width: 170px; ">
 <div class="Qlist" id="divOnline" onmouseout="hideMsgBox(event);" style="display: none; " onmouseover="OnlineOver();">
     <div class="t"></div>
@@ -184,14 +201,14 @@ if ($this->_foreach['nav_bottom_list']['total'] > 0):
     foreach ($_from AS $this->_var['im']):
 ?>
       <?php if ($this->_var['im']): ?>
-      <li><a href="http://edit.yahoo.com/config/send_webmesg?.target=<?php echo $this->_var['im']; ?>n&.src=pg" target="_blank"><img src="themes/ecmoban_sifulan/images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> <?php echo $this->_var['im']; ?></a></li>
+      <li><a href="http://edit.yahoo.com/config/send_webmesg?.target=<?php echo $this->_var['im']; ?>n&.src=pg" target="_blank"><img src="themes/ecmoban_suning/images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> <?php echo $this->_var['im']; ?></a></li>
       <?php endif; ?>
       <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
       <?php $_from = $this->_var['msn']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'im');if (count($_from)):
     foreach ($_from AS $this->_var['im']):
 ?>
       <?php if ($this->_var['im']): ?>
-      <li><img src="themes/ecmoban_sifulan/images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact=<?php echo $this->_var['im']; ?>"><?php echo $this->_var['im']; ?></a></li>
+      <li><img src="themes/ecmoban_suning/images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact=<?php echo $this->_var['im']; ?>"><?php echo $this->_var['im']; ?></a></li>
       <?php endif; ?>
       <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
       <?php $_from = $this->_var['skype']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'im');if (count($_from)):
@@ -220,7 +237,7 @@ if ($this->_foreach['nav_bottom_list']['total'] > 0):
     </div>
     <div class="b"></div>
 </div>
-<div id="divMenu" onmouseover="OnlineOver();" style="display: block; "><img src="themes/ecmoban_sifulan/qq/images/qq_1.gif" class="press" alt="在线咨询"></div>
+<div id="divMenu" onmouseover="OnlineOver();" style="display: block; "><img src="ecmoban_qq/images/qq_1.gif" class="press" alt="在线咨询"></div>
 </div>
 <script type="text/javascript">
 //<![CDATA[

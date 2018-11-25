@@ -21,20 +21,17 @@
 <?php echo $this->fetch('library/page_header.lbi'); ?>
 
 <div class="block clearfix">
-<div style="width:160px; float:left">
-<div class="category_left">
-<?php echo $this->fetch('library/category_tree_index.lbi'); ?></div>
+<div class="AreaL">
+<?php echo $this->fetch('library/category_tree_index.lbi'); ?>
 
 
 
+    
   </div>
 
-<div style="float:right; width:837px; height:333px"> 
+<div style="float:right; width:994px;"> 
 <?php echo $this->fetch('library/index_ad.lbi'); ?>
  
- 
-
-<?php $this->assign('ads_id','1'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 
  
 </div>
@@ -42,16 +39,20 @@
   
     <div class="blank"></div> 
  
+ 
+
+<?php echo $this->fetch('library/recommend_promotion.lbi'); ?>
   
+<div class="blank"></div> 
   <div class="goodsBox_1">
   
 
   
   
-<?php $this->assign('ads_id','1'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
 <?php echo $this->fetch('library/recommend_new.lbi'); ?>
 <?php echo $this->fetch('library/recommend_hot.lbi'); ?>
 <?php echo $this->fetch('library/recommend_best.lbi'); ?>
+<?php echo $this->fetch('library/cat_goods.lbi'); ?>
 
   </div> 
   

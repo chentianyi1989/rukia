@@ -1,5 +1,5 @@
 const env = {  
-  'API_HOST': 'http://api.127.0.0.1',
+  'API_HOST': 'http://api.localhost',
   // 'API_HOST': 'http://api.127.0.0.1',
   'APP_NAME': 'Demo',
   'APP_DESC': 'This is a  demo',

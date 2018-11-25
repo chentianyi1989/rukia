@@ -1,7 +1,27 @@
+<link href="themes/ecmoban_suning/qq/images/qq.css" rel="stylesheet" type="text/css" />
+ 
 <script type="text/javascript">
 var process_request = "<?php echo $this->_var['lang']['process_request']; ?>";
 </script>
 <script type="text/javascript">
+//设为首页 www.ecmoban.com
+function SetHome(obj,url){
+    try{
+        obj.style.behavior='url(#default#homepage)';
+       obj.setHomePage(url);
+   }catch(e){
+       if(window.netscape){
+          try{
+              netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+         }catch(e){
+              alert("抱歉，此操作被浏览器拒绝！\n\n请在浏览器地址栏输入“about:config”并回车然后将[signed.applets.codebase_principal_support]设置为'true'");
+          }
+       }else{
+        alert("抱歉，您所使用的浏览器无法完成此操作。\n\n您需要手动将【"+url+"】设置为首页。");
+       }
+  }
+}
+ 
 //收藏本站 bbs.ecmoban.com
 function AddFavorite(title, url) {
   try {
@@ -17,121 +37,172 @@ catch (e) {
   }
 }
 </script>
-<div id="header">
-  <div class="heaTop">
-    <div class="heaTopR"> 
-     <?php echo $this->smarty_insert_scripts(array('files'=>'jquery-1.9.1.min.js,jquery.json.js')); ?>
-   <?php echo $this->smarty_insert_scripts(array('files'=>'transport.js,utils.js,jquery.SuperSlide.js')); ?>
 
-   <font id="ECS_MEMBERZONE"><?php 
+ 
+
+<div class="top_nav">
+	<script type="text/javascript">
+          //初始化主菜单
+            function sw_nav(obj,tag)
+            {
+     
+            var DisSub = document.getElementById("DisSub_"+obj);
+            var HandleLI= document.getElementById("HandleLI_"+obj);
+                if(tag==1)
+                {
+                    DisSub.style.display = "block";
+             
+                    
+                }
+                else
+                {
+                    DisSub.style.display = "none";
+                
+                }
+     
+            }
+     
+    </script>
+    <div class="block">     
+    
+        <ul class="top_bav_l">
+        <li class="top_sc">
+           <a href="javascript:void(0);" onclick="AddFavorite('我的网站',location.href)">收藏本站</a>
+</li>
+            <li>关注我们：</li>
+            <li style="border:none" class="menuPopup"  onMouseOver="sw_nav(1,1);" onMouseOut="sw_nav(1,0);">
+            <a id="HandleLI_1" href="javascript:;" title="微博" class="attention"></a> 
+            <div id=DisSub_1 class="top_nav_box  top_weibo"> 
+            <a href="http://e.weibo.com/ECMBT" target="_blank" title="新浪微博" class="top_weibo"></a>
+            <a href="http://e.t.qq.com/ecmoban_com" target="_blank" title="QQ微博" class="top_qq"></a> 
+            </div> 
+            </li> 
+            <li class="menuPopup" onMouseOver="sw_nav(2,1);" onMouseOut="sw_nav(2,0);">
+            <a id="HandleLI_2" href="javascript:;" title="微信" class="top_weixin"></a> 
+            <div id="DisSub_2" class="weixinBox" style="display: none;"> 
+		
+            <img src="themes/ecmoban_suning/images/weixin.png" style="width:150px; height:190px;  background:#0000CC" width="150" height="190"> 
+            </div> 
+            </li>
+        </ul>
+    
+        <div class="header_r">
+        
+        <?php echo $this->smarty_insert_scripts(array('files'=>'transport.js,utils.js')); ?>
+        <font id="ECS_MEMBERZONE" ><?php 
 $k = array (
   'name' => 'member_info',
 );
 echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
 ?> </font>
-   <span class="heaHalving"> 
-      <?php if ($this->_var['navigator_list']['top']): ?> 
-      <?php $_from = $this->_var['navigator_list']['top']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav');$this->_foreach['nav_top_list'] = array('total' => count($_from), 'iteration' => 0);
+     
+         <?php if ($this->_var['navigator_list']['top']): ?>
+            <?php $_from = $this->_var['navigator_list']['top']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav');$this->_foreach['nav_top_list'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['nav_top_list']['total'] > 0):
     foreach ($_from AS $this->_var['nav']):
         $this->_foreach['nav_top_list']['iteration']++;
-?> 
-      <a href="<?php echo $this->_var['nav']['url']; ?>" <?php if ($this->_var['nav']['opennew'] == 1): ?> target="_blank" <?php endif; ?>><?php echo $this->_var['nav']['name']; ?></a>
-       <strong style=" font-weight:100; line-height:30px">
-       <?php if (! ($this->_foreach['nav_top_list']['iteration'] == $this->_foreach['nav_top_list']['total'])): ?>
-             ¦
-            <?php endif; ?> </strong> 
-      <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?> 
-      <?php endif; ?> 
-      </span>
-       </div>
-  <a href="javascript:void(0);" onclick="AddFavorite('我的网站',location.href)"><img src="themes/ecmoban_sifulan/images/fav.gif" alt="收藏夹" class="heaTopFav"></a>
-     </div>
-  <div class="heaInfo">
-    <p class="heaLogo"> <a href="index.php" target="_parent" title="<?php echo $this->_var['shop_name']; ?>" > <img src="themes/ecmoban_sifulan/images/logo.gif" alt="<?php echo $this->_var['shop_name']; ?>"> </a> </p>
-    <p class="heaGif"><a href="#" title="<?php echo $this->_var['shop_name']; ?>"><img src="themes/ecmoban_sifulan/images/logo_r.gif" alt="<?php echo $this->_var['shop_name']; ?>"></a></p>
-    
-    <div class="heaCar"  onmouseover="this.className='heaCar heaCar_on'" onmouseout="this.className='heaCar'" > <?php echo $this->smarty_insert_scripts(array('files'=>'transport.js')); ?>
-      <div class="clearfix" id="ECS_CARTINFO" > 我的购物车<a href="flow.php"><b>&nbsp;<?php 
+?>
+                   <a href="<?php echo $this->_var['nav']['url']; ?>" <?php if ($this->_var['nav']['opennew'] == 1): ?> target="_blank" <?php endif; ?>><?php echo $this->_var['nav']['name']; ?></a>
+                    <?php if (! ($this->_foreach['nav_top_list']['iteration'] == $this->_foreach['nav_top_list']['total'])): ?>
+                     |
+                    <?php endif; ?>
+            <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+           <?php endif; ?>
+         
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<div  class="clearfix"> 
+    <div class="block header">
+        <div class="top">
+        <a href="index.php" class="logo"><img src="themes/ecmoban_suning/images/logo.gif">  </a>
+        <div class="head_r"> 
+        <div class="top_search"> 
+        <script type="text/javascript">
+            
+            <!--
+            function checkSearchForm()
+            {
+                if(document.getElementById('keyword').value)
+                {
+                    return true;
+                }
+                else
+                {
+                    alert("<?php echo $this->_var['lang']['no_keywords']; ?>");
+                    return false;
+                }
+            }
+            -->
+            
+            </script>
+          <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()"  style="_position:relative; top:5px;">
+          <input name="keywords" type="text" id="keyword" class="keyword" value="<?php echo htmlspecialchars($this->_var['search_keywords']); ?>"  />
+        <input value="" id="seachbtn" type="submit"> 
+        </form>
+        <div class="vjia-suggest-container"><div class="vjia-suggest-content"></div>
+            <ol>
+            </ol>
+        </div> 
+        <div style="clear:both"></div> 
+        <?php if ($this->_var['searchkeywords']): ?>
+            <div class="search_tig">
+                <?php $_from = $this->_var['searchkeywords']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'val');if (count($_from)):
+    foreach ($_from AS $this->_var['val']):
+?>
+                <a href="search.php?keywords=<?php echo urlencode($this->_var['val']); ?>" target="_blank" class="track"><?php echo $this->_var['val']; ?></a>
+                <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+            </div>    
+        <?php endif; ?>
+        </div> 
+        <div class="top_shopCart clearfix"  >
+            <b>
+            <span id="ECS_CARTINFO">
+            <?php 
 $k = array (
   'name' => 'cart_info',
 );
 echo $this->_echash . $k['name'] . '|' . serialize($k) . $this->_echash;
-?>&nbsp;</b></a>件 
- 
-
-
+?>
+            </span>
+            </b> 
+            <a class="jiesuan" href="flow.php">去结算</a>
+            </div> 
+             
+        </div>
+        </div>
+    </div> 
 </div>
-      <a class="heaCheck" style="background:url(themes/ecmoban_sifulan/images/jt.jpg) 50px 6px no-repeat;" href="flow.php" title="去结算">去结算</a> </div>
-  </div>
-  
-  
-  
-  <div id="heaNav">
-    <p class="heaNavOnly"> <a href="index.php"<?php if ($this->_var['navigator_list']['config']['index'] == 1): ?> class="cur"<?php endif; ?>><?php echo $this->_var['lang']['home']; ?></a> </p>
-    <ul class="heaNavNone">
-      <?php $_from = $this->_var['navigator_list']['middle']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav');$this->_foreach['nav_middle_list'] = array('total' => count($_from), 'iteration' => 0);
+<div style="clear:both"></div>
+ 
+<div class="menu_box clearfix"> 
+<div class="block"> 
+<div class="menu">
+  <a href="index.php"<?php if ($this->_var['navigator_list']['config']['index'] == 1): ?> class="cur"<?php endif; ?>><?php echo $this->_var['lang']['home']; ?><span></span></a>
+  <?php $_from = $this->_var['navigator_list']['middle']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav');$this->_foreach['nav_middle_list'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['nav_middle_list']['total'] > 0):
     foreach ($_from AS $this->_var['nav']):
         $this->_foreach['nav_middle_list']['iteration']++;
 ?>
-      <li  class="heaNav"onmouseover="this.className='heaNav heaNav_on'" onmouseout="this.className='heaNav'" > <a href="<?php echo $this->_var['nav']['url']; ?>" <?php if ($this->_var['nav']['opennew'] == 1): ?>target="_blank" <?php endif; ?> <?php if ($this->_var['nav']['active'] == 1): ?> class="cur"<?php endif; ?>  title="<?php echo $this->_var['nav']['name']; ?>" ><?php echo $this->_var['nav']['name']; ?></a> <?php if ($this->_var['nav']['cat_list']): ?>
-        <div class='heaNavSec'>
-          <dl>
-            <?php $_from = $this->_var['nav']['cat_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'cat');if (count($_from)):
-    foreach ($_from AS $this->_var['cat']):
-?>
-            <dd  > <a class="t" href="<?php echo $this->_var['cat']['url']; ?>"><?php echo htmlspecialchars($this->_var['cat']['name']); ?></a> 
-             
-            </dd>
-            <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-          </dl>
-        </div>
-        <?php endif; ?></li>
-      <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-    </ul>
-    <div class="heaHL"><a href="search.php?intro=new" name="__menuxinpinhui" target="_parent" title="新品上市">新品上市</a><a href="search.php?intro=best" name="__menuxinpinhui" target="_parent" title="独家发售">独家发售</a></div>
-  </div>
-   
-
-<div id="search"  class="clearfix">
-  <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm()" class="f_r">
-   <input name="keywords" type="text" id="keyword" value="<?php echo htmlspecialchars($this->_var['search_keywords']); ?>" class="B_input f_l" />
-   <input name="imageField" type="submit" value="" class="go" style="cursor:pointer;" />
-   </form>
-   <div class="keys f_l">
-   <script type="text/javascript">
-    
-    <!--
-    function checkSearchForm()
-    {
-        if(document.getElementById('keyword').value)
-        {
-            return true;
-        }
-        else
-        {
-            alert("<?php echo $this->_var['lang']['no_keywords']; ?>");
-            return false;
-        }
-    }
-    -->
-    
-    </script>
-    <?php if ($this->_var['searchkeywords']): ?>
-   <?php echo $this->_var['lang']['hot_search']; ?> ：
-   <?php $_from = $this->_var['searchkeywords']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'val');if (count($_from)):
-    foreach ($_from AS $this->_var['val']):
-?>
-   <a href="search.php?keywords=<?php echo urlencode($this->_var['val']); ?>"><?php echo $this->_var['val']; ?></a>
-   <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-   <?php endif; ?>
-  </div>
-   
-</div>
-
-      
-   
+  <a href="<?php echo $this->_var['nav']['url']; ?>" <?php if ($this->_var['nav']['opennew'] == 1): ?>target="_blank" <?php endif; ?> <?php if ($this->_var['nav']['active'] == 1): ?> class="cur"<?php endif; ?>>
+<?php echo $this->_var['nav']['name']; ?>
+ <span></span>
+</a>
  
+ <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
+</div> 
 </div>
+</div>
+ 
+ 
+
+ 
+
 
