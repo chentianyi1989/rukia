@@ -1660,7 +1660,14 @@ function assign_template($ctype = '', $catlist = array())
     $smarty->assign('username',      !empty($_SESSION['user_name']) ? $_SESSION['user_name'] : '');
     $smarty->assign('category_list', cat_list(0, 0, true,  2, false));
     $smarty->assign('catalog_list',  cat_list(0, 0, false, 1, false));
-    $smarty->assign('navigator_list',        get_navigator($ctype, $catlist));  //自定义导航栏
+//     $smarty->assign('navigator_list',        get_navigator($ctype, $catlist));  //自定义导航栏
+
+    echo "<br/><br/><br/><br/>";
+    $smarty->assign('navigator_list',cat_nav_list());  //自定义导航栏
+    
+//     var_dump(cat_nav_list());
+    
+//     echo json_encode(cat_nav_list());
 
     if (!empty($GLOBALS['_CFG']['search_keywords']))
     {
@@ -1944,6 +1951,57 @@ function get_library_number($library, $template = null)
 
     return $num;
 }
+/**
+ * 自定义导航 my
+ */
+function cat_nav_list() {
+    
+    $sql = "SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children ".
+        'FROM ' . $GLOBALS['ecs']->table('category') . " AS c ".
+        "LEFT JOIN " . $GLOBALS['ecs']->table('category') . " AS s ON s.parent_id=c.cat_id ".
+//         "LEFT JOIN " . $GLOBALS['ecs']->table('nav') . " AS n on n.cid = c.cat_id ".
+        "where c.show_in_nav = 1 ".
+        "GROUP BY c.cat_id ".
+        'ORDER BY c.parent_id, c.sort_order ASC';
+    
+    $res = $GLOBALS['db']->getAll($sql);
+    if (empty($res) == true) {
+        return array();
+    }
+    
+    $results = array();
+    
+    foreach ($res AS $key => $value) {
+        
+        $cat_id = $value['cat_id'];
+        $value['url'] = build_uri('category', array('cid' => $value['cat_id']), $value['cat_name']);
+        
+        if($value['parent_id'] > 0) {
+            cat_nav_options($results,$value);
+        }else {
+            $results[$cat_id] = $value;
+        }
+    }
+    
+    return $results;
+}
+
+function cat_nav_options (&$results,$value) {
+    
+    $parent_id = $value['parent_id'];
+    
+    foreach ($results AS $k => $v) {
+        
+        if ($k == $parent_id) {
+            $results[$k]["child"][$value["cat_id"]] = $value;
+            break;
+        }else {
+            if (!empty($results[$k]["child"])) {
+                cat_nav_options($results[$k]["child"], $value);
+            }
+        }
+    }
+}
 
 /**
  * 取得自定义导航栏列表
@@ -1958,10 +2016,8 @@ function get_navigator($ctype = '', $catlist = array())
 
     $cur_url = substr(strrchr($_SERVER['REQUEST_URI'],'/'),1);
 
-    if (intval($GLOBALS['_CFG']['rewrite']))
-    {
-        if(strpos($cur_url, '-'))
-        {
+    if (intval($GLOBALS['_CFG']['rewrite'])) {
+        if(strpos($cur_url, '-')) {
             preg_match('/([a-z]*)-([0-9]*)/',$cur_url,$matches);
             $cur_url = $matches[1].'.php?id='.$matches[2];
         }
@@ -1978,8 +2034,7 @@ function get_navigator($ctype = '', $catlist = array())
         'middle' => array(),
         'bottom' => array()
     );
-    while ($row = $GLOBALS['db']->fetchRow($res))
-    {
+    while ($row = $GLOBALS['db']->fetchRow($res)) {
         $navlist[$row['type']][] = array(
             'name'      =>  $row['name'],
             'opennew'   =>  $row['opennew'],

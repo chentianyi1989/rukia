@@ -10,23 +10,10 @@ $data = array (
     'show_in_nav' => '1',
     'grade' => '0',
     'sort_order' => '1',
-    'has_children' => '1',
+    'has_children' => '2',
     'goods_num' => 0,
   ),
   1 => 
-  array (
-    'cat_id' => '25',
-    'cat_name' => '数码时尚',
-    'measure_unit' => '',
-    'parent_id' => '0',
-    'is_show' => '1',
-    'show_in_nav' => '1',
-    'grade' => '0',
-    'sort_order' => '2',
-    'has_children' => '0',
-    'goods_num' => 0,
-  ),
-  2 => 
   array (
     'cat_id' => '18',
     'cat_name' => '智能硬件',
@@ -39,20 +26,20 @@ $data = array (
     'has_children' => '0',
     'goods_num' => '1',
   ),
-  3 => 
+  2 => 
   array (
     'cat_id' => '22',
     'cat_name' => '移动电源',
     'measure_unit' => '',
     'parent_id' => '0',
     'is_show' => '1',
-    'show_in_nav' => '1',
+    'show_in_nav' => '0',
     'grade' => '0',
     'sort_order' => '6',
     'has_children' => '0',
     'goods_num' => '1',
   ),
-  4 => 
+  3 => 
   array (
     'cat_id' => '12',
     'cat_name' => '充值卡',
@@ -65,7 +52,7 @@ $data = array (
     'has_children' => '0',
     'goods_num' => 0,
   ),
-  5 => 
+  4 => 
   array (
     'cat_id' => '1',
     'cat_name' => '手机类型',
@@ -78,7 +65,7 @@ $data = array (
     'has_children' => '2',
     'goods_num' => 0,
   ),
-  6 => 
+  5 => 
   array (
     'cat_id' => '6',
     'cat_name' => '手机',
@@ -91,7 +78,7 @@ $data = array (
     'has_children' => '2',
     'goods_num' => '3',
   ),
-  7 => 
+  6 => 
   array (
     'cat_id' => '19',
     'cat_name' => '配件',
@@ -104,20 +91,20 @@ $data = array (
     'has_children' => '2',
     'goods_num' => '10',
   ),
-  8 => 
+  7 => 
   array (
     'cat_id' => '16',
     'cat_name' => '服装',
     'measure_unit' => '',
     'parent_id' => '0',
     'is_show' => '1',
-    'show_in_nav' => '1',
+    'show_in_nav' => '0',
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',
     'goods_num' => '6',
   ),
-  9 => 
+  8 => 
   array (
     'cat_id' => '4',
     'cat_name' => '3G手机',
@@ -130,7 +117,7 @@ $data = array (
     'has_children' => '0',
     'goods_num' => '2',
   ),
-  10 => 
+  9 => 
   array (
     'cat_id' => '3',
     'cat_name' => '小型手机',
@@ -143,7 +130,7 @@ $data = array (
     'has_children' => '0',
     'goods_num' => '3',
   ),
-  11 => 
+  10 => 
   array (
     'cat_id' => '8',
     'cat_name' => '耳机',
@@ -156,7 +143,7 @@ $data = array (
     'has_children' => '0',
     'goods_num' => '3',
   ),
-  12 => 
+  11 => 
   array (
     'cat_id' => '9',
     'cat_name' => '电池',
@@ -169,7 +156,7 @@ $data = array (
     'has_children' => '0',
     'goods_num' => 0,
   ),
-  13 => 
+  12 => 
   array (
     'cat_id' => '24',
     'cat_name' => '数码时尚',
@@ -182,7 +169,7 @@ $data = array (
     'has_children' => '0',
     'goods_num' => '8',
   ),
-  14 => 
+  13 => 
   array (
     'cat_id' => '20',
     'cat_name' => '保护壳',
@@ -195,6 +182,19 @@ $data = array (
     'has_children' => '0',
     'goods_num' => '1',
   ),
+  14 => 
+  array (
+    'cat_id' => '25',
+    'cat_name' => '数码时尚1',
+    'measure_unit' => '',
+    'parent_id' => '26',
+    'is_show' => '1',
+    'show_in_nav' => '1',
+    'grade' => '0',
+    'sort_order' => '2',
+    'has_children' => '0',
+    'goods_num' => 0,
+  ),
   15 => 
   array (
     'cat_id' => '27',
@@ -202,7 +202,7 @@ $data = array (
     'measure_unit' => '',
     'parent_id' => '26',
     'is_show' => '1',
-    'show_in_nav' => '0',
+    'show_in_nav' => '1',
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '5',
@@ -215,7 +215,7 @@ $data = array (
     'measure_unit' => '',
     'parent_id' => '27',
     'is_show' => '1',
-    'show_in_nav' => '0',
+    'show_in_nav' => '1',
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',
@@ -228,7 +228,7 @@ $data = array (
     'measure_unit' => '',
     'parent_id' => '27',
     'is_show' => '1',
-    'show_in_nav' => '0',
+    'show_in_nav' => '1',
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',
@@ -241,7 +241,7 @@ $data = array (
     'measure_unit' => '',
     'parent_id' => '27',
     'is_show' => '1',
-    'show_in_nav' => '0',
+    'show_in_nav' => '1',
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',
@@ -254,7 +254,7 @@ $data = array (
     'measure_unit' => '',
     'parent_id' => '27',
     'is_show' => '1',
-    'show_in_nav' => '0',
+    'show_in_nav' => '1',
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',
@@ -267,7 +267,7 @@ $data = array (
     'measure_unit' => '',
     'parent_id' => '27',
     'is_show' => '1',
-    'show_in_nav' => '0',
+    'show_in_nav' => '1',
     'grade' => '0',
     'sort_order' => '50',
     'has_children' => '0',

@@ -1,183 +1,111 @@
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<div class="g-footer">
-  <div class="serverbox">
-    <div class="sn-server">
-      <div class="serverlist"> 
-        <!--{if $helps}--> 
-        <!-- {foreach from=$helps item=help_cat name=no} -->
-        <dl  class=" g-serverlist-first_{$smarty.foreach.no.iteration} ">
-          <dt ><a href='{$help_cat.cat_id}' title="{$help_cat.cat_name}">{$help_cat.cat_name}</a></dt>
-          <!-- {foreach from=$help_cat.article item=item} -->
-          <dd><a href="{$item.url}" title="{$item.title|escape:html}">{$item.short_title}</a></dd>
-          <!-- {/foreach} -->
-        </dl>
-        <!-- {/foreach} --> 
-        <!--{/if}-->
-        <dl class="g-sncs">
-          <dt>苏宁众包 <img class="g-sncs-new" src="http://image.suning.cn/public/images/nav-new.gif" alt=""> </dt>
-          <dd style="width: 170px;
-background: url(../images/footsprite.png) no-repeat -205px -392px;">
-           以苏宁全渠道包销为主要特点，整合全社会众包资源，扶持创新企业，推广创新产品。 <a  class="g-snsc-link" target="_blank" href="#">了解更多</a> 
-          </dd>
-        </dl>
-      </div>
-      <div class="otherinfo">
-        <dl class="netserver">
-          <dt>网络服务</dt>
-          <dd>我们在全国300个城市有<a rel="nofollow"  target="_blank" href="#">1600</a>家门店<a  target="_blank" href="#">3000</a>个服务点为您提供最贴心的阳光服务！</dd>
-        </dl>
-        <dl class="searchsn">
-          <dt> <a  href="#" target="_blank">搜索您身边的苏宁</a> </dt>
-          <dd>搜索您身边的苏宁</dd>
-        </dl>
-      </div>
-    </div>
-  </div>
-  <div class="specialbox">
-    <div class="sn-specialbox" style="overflow:hidden"> <a class="slink1" href="#" title="正品有保证" target="_blank">正品有保证</a> <a  class="slink2" href="#" title="百城半日达" target="_blank">百城半日达</a> <a  class="slink3" href="#" title="服务一站式" target="_blank">服务一站式</a> </div>
-  </div>
-  <div class="copyrightbox">
-    <div class="copyright"> 
-      <!--友情链接 start--> 
-      <!--{if $img_links  or $txt_links }-->
-      <div>
-      <dl class="sncompany box_1" style="text-align:left">
-        <dd class=""> 
-          <!--开始图片类型的友情链接{foreach from=$img_links item=link name=bottom}--> 
-          <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a><!-- {if !$smarty.foreach.bottom.last} --><span>|</span><!-- {/if} --> 
-          <!--结束图片类型的友情链接{/foreach}--> 
-          <!-- {if $txt_links} --> 
-          <!--开始文字类型的友情链接{foreach from=$txt_links item=link name=bottom}--> 
-          <a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a> <!-- {if !$smarty.foreach.bottom.last} --><span>|</span><!-- {/if} --> 
-          <!--结束文字类型的友情链接{/foreach}--> 
-          <!-- {/if} --> 
-        </dd>
-      </dl>
-      </div>
-      <!--{/if}--> 
-      <!--友情链接 end--> 
-      
-      <!--底部导航 start-->
-      
-      <p class="snlinks"> 
-        <!-- {if $navigator_list.bottom} --> 
-        <!-- {foreach name=nav_bottom_list from=$navigator_list.bottom item=nav} --> 
-        <a href="{$nav.url}" <!-- {if $nav.opennew eq 1} --> target="_blank" <!-- {/if} -->>{$nav.name}</a> 
-        <!-- {if !$smarty.foreach.nav_bottom_list.last} --> 
-        <span>|</span> 
-        <!-- {/if} --> 
-        <!-- {/foreach} --> 
-        <!-- {/if} --> 
-      </p>
-      
-      <!--底部导航 end--> 
-      <!--版权 start-->
-      <div id="footer" style="height:1px; width:1px; height:1px; overflow:hidden; background:none;">
-        <div class="text"> {$copyright}<br />
-          {$shop_address} {$shop_postcode} 
-          <!-- 客服电话{if $service_phone} --> 
-          Tel: {$service_phone} 
-          <!-- 结束客服电话{/if} --> 
-          <!-- 邮件{if $service_email} --> 
-          E-mail: {$service_email}<br />
-          <!-- 结束邮件{/if} --> 
-          <!-- QQ 号码 {foreach from=$qq item=im} --> 
-          <!-- {if $im} --> 
-          <a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a> 
-          <!-- {/if} --> 
-          <!-- {/foreach} 结束QQ号码 --> 
-          <!-- 淘宝旺旺 {foreach from=$ww item=im} --> 
-          <!-- {if $im} --> 
-          <a href="http://amos1.taobao.com/msg.ww?v=2&uid={$im|escape:u8_url}&s=2" target="_blank"><img src="http://amos1.taobao.com/online.ww?v=2&uid={$im|escape:u8_url}&s=2" width="16" height="16" border="0" alt="淘宝旺旺" />{$im}</a> 
-          <!-- {/if} --> 
-          <!--{/foreach} 结束淘宝旺旺 --> 
-          <!-- Yahoo Messenger {foreach from=$ym item=im} --> 
-          <!-- {if $im} --> 
-          <a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a> 
-          <!-- {/if} --> 
-          <!-- {/foreach} 结束Yahoo Messenger --> 
-          <!-- MSN Messenger {foreach from=$msn item=im} --> 
-          <!-- {if $im} --> 
-          <img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact={$im}">{$im}</a> 
-          <!-- {/if} --> 
-          <!-- {/foreach} 结束MSN Messenger --> 
-          <!-- Skype {foreach from=$skype item=im} --> 
-          <!-- {if $im} --> 
-          <img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" /><a href="skype:{$im|escape:url}?call">{$im}</a> 
-          <!-- {/if} --> 
-          <!-- {/foreach} --><br />
-          <!-- ICP 证书{if $icp_number} --> 
-          {$lang.icp_number}:<a href="http://www.miibeian.gov.cn/" target="_blank">{$icp_number}</a><br />
-          <!-- 结束ICP 证书{/if} --> 
-          {insert name='query_info'}<br />
-          {foreach from=$lang.p_y item=pv}{$pv}{/foreach}{$licensed}<br />
-          {if $stats_code}
-          <div align="left">{$stats_code}</div>
-          {/if}
-          <div align="left"  id="rss"><a href="{$feed_url}"><img src="../images/xml_rss2.gif" alt="rss" /></a></div>
-        </div>
-      </div>
-      <p class="rights"> © 2005-2014 ecshop模板堂(ecmoban.com) 版权所有，并保留所有权利。 常年法律顾问：上海华宏律师事务所</p>
-      <div class="subfooter"> <a  href="#" title="可信网站示范单位" target="_blank"><img src="http://image4.suning.cn/images/ShoppingArea/Common/morelogo2.png"></a> <a  href="#" title="诚信网站" target="_blank"><img src="http://image5.suning.cn/images/ShoppingArea/Common/morelogo6.png"></a> <a  href="#" title="电子营业执照" target="_blank"><img src="http://image1.suning.cn/images/ShoppingArea/Common/morelogo7.png"></a> </div>
-      <Div class="blank"></Div>
-      <div align="center"><a href=" http://www.ecmoban.com" target="_blank"><img src="../images/ecmoban.gif" alt="ECShop模板" /></a></div>
-    </div>
-  </div>
+
+
+<!--{if $img_links or $txt_links }-->
+<div id="footer">友情链接：
+	<div class="clearfix footbar w1200">
+		<ul class="block3">
+			<!--开始图片类型的友情链接{foreach from=$img_links item=link name=bottom}--> 
+				<a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a>
+				<!-- {if !$smarty.foreach.bottom.last} -->
+					<span>|</span>
+				<!-- {/if} --> 
+          	<!--结束图片类型的友情链接{/foreach}-->
+			<!--开始文字类型的友情链接{foreach from=$txt_links item=link name=bottom}--> 
+				<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a> 
+				<!-- {if !$smarty.foreach.bottom.last} -->
+					<span>|</span>
+				<!-- {/if} --> 
+			<!--结束文字类型的友情链接{/foreach}--> 
+		</ul>
+	</div>
+</div>
+<!--{/if}--> 
+
+<div id="footer">
+	<div class="clearfix footbar w1200">
+		<ul class="block3">
+			<!--{if $helps}--> 
+				<!-- {foreach from=$helps item=help_cat name=no} -->
+				<li>
+					<h4><a href='{$help_cat.cat_id}' title="{$help_cat.cat_name}">{$help_cat.cat_name}</a></a></h4>
+					<div class="boxx">
+						<!-- {foreach from=$help_cat.article item=item} -->
+						<a href="{$item.url}" title="{$item.title|escape:html}">{$item.short_title}</a>
+						<!-- {/foreach} -->
+	  		  		</div>
+				</li>
+				
+				<!-- {/foreach} -->
+			<!--{/if}-->
+			
+			<li>
+				<div class="special fl">
+		            <dl>
+		                <dt><img src="http://36ecshop.shopsy.cn/36hh/themes/hh/images/wx.jpg"></dt>
+		                <dd>关注官方微信</dd>
+		            </dl>
+		            <dl>
+		                <dt><img src="http://36ecshop.shopsy.cn/36hh/themes/hh/images/wb.jpg"></dt>
+		                <dd><span class="sinaIcon"></span>官方微博</dd>
+		            </dl>
+		        </div>
+			</li>
+			<li>
+				{$shop_address} {$shop_postcode} 
+				<!-- 客服电话{if $service_phone} --> 
+					Tel: {$service_phone} 
+				<!-- 结束客服电话{/if} --> 
+				<!-- 邮件{if $service_email} --> 
+					E-mail: {$service_email}<br />
+				<!-- 结束邮件{/if} --> 
+				<!-- QQ 号码 {foreach from=$qq item=im} --> 
+				<!-- {if $im} --> 
+					<a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a> 
+				<!-- {/if} --> 
+				<!-- {/foreach} 结束QQ号码 --> 
+			</li>
+		</ul>
+	</div>
 </div>
 
-<div class="blank"></div>
 
 
 
-
-
-
-  <!-- 悬浮客服开始 -->
-
-
-
-<link href="ecmoban_qq/images/qq.css" rel="stylesheet" type="text/css" />
-<div class="QQbox" id="divQQbox" style="width: 170px; ">
-<div class="Qlist" id="divOnline" onmouseout="hideMsgBox(event);" style="display: none; " onmouseover="OnlineOver();">
-    <div class="t"></div>
-    <div class="infobox">我们营业的时间<br>9:00-18:00</div>
-    <div class="con">
-        <ul>
+<div class="ft_nav"> 
+           
+	<a href="index.htm" tppabs="http://36ecshop.shopsy.cn/36hh/" class="noborder" rel="nofollow">返回首页</a> 
+	<a href="message.php.htm" tppabs="http://36ecshop.shopsy.cn/36hh/message.php"    rel="nofollow">留言板</a> 
+	<a href="quotation.php.htm" tppabs="http://36ecshop.shopsy.cn/36hh/quotation.php"    rel="nofollow">报价单</a> 
+	<a href="user.php.htm" tppabs="http://36ecshop.shopsy.cn/36hh/user.php"    rel="nofollow">用户中心</a> 
+	<a href="javascript:if(confirm('http://36ecshop.shopsy.cn/article.php?id=9  \n\nكτݾϞרԃ Teleport Ultra Ђ՘, ӲΪ ̼ˇһٶԲܲ·޶΢ҿѻʨ׃Ϊ̼քǴʼַ֘քַ֘c  \n\nţЫ՚ؾϱǷʏղߪ̼?'))window.location='http://36ecshop.shopsy.cn/article.php?id=9'" tppabs="http://36ecshop.shopsy.cn/article.php?id=9"    rel="nofollow">售后服务</a> 
+   
+</div>
+<div class="w1200">
+      <div class="ft_txt">
+        <p>{$copyright} {$shop_address} {$shop_postcode} 
+        		<a href="javascript:if(confirm('http://www.miitbeian.gov.cn/  \n\nكτݾϞרԃ Teleport Ultra Ђ՘, ӲΪ ̼ˇһٶԲܲ·޶΢ҿѻʨ׃Ϊ̼քǴʼַ֘քַ֘c  \n\nţЫ՚ؾϱǷʏղߪ̼?'))window.location='http://www.miitbeian.gov.cn/'" tppabs="http://www.miitbeian.gov.cn/" target="_blank" rel="nofollow"></a></p>
+                  <p class="link" style="display:none;"> 友情链接：         
+		        <a href="javascript:if(confirm('http://www.ecshop.com/  \n\nكτݾϞרԃ Teleport Ultra Ђ՘, ӲΪ ̼ˇһٶԲܲ·޶΢ҿѻʨ׃Ϊ̼քǴʼַ֘քַ֘c  \n\nţЫ՚ؾϱǷʏղߪ̼?'))window.location='http://www.ecshop.com/'" tppabs="http://www.ecshop.com/" target="_blank" title="ECSHOP 网上商店管理系统">ECSHOP 网上商店管理系统</a>
+                <a href="javascript:if(confirm('http://www.maifou.net/  \n\nكτݾϞרԃ Teleport Ultra Ђ՘, ӲΪ ̼ˇһٶԲܲ·޶΢ҿѻʨ׃Ϊ̼քǴʼַ֘քַ֘c  \n\nţЫ՚ؾϱǷʏղߪ̼?'))window.location='http://www.maifou.net/'" tppabs="http://www.maifou.net/" target="_blank" title="买否网">买否网</a>
+        <a href="javascript:if(confirm('http://www.wdwd.com/  \n\nكτݾϞרԃ Teleport Ultra Ђ՘, ӲΪ ̼ˇһٶԲܲ·޶΢ҿѻʨ׃Ϊ̼քǴʼַ֘քַ֘c  \n\nţЫ՚ؾϱǷʏղߪ̼?'))window.location='http://www.wdwd.com/'" tppabs="http://www.wdwd.com/" target="_blank" title="免费开独立网店">免费开独立网店</a>
+                
+         </p>
+              </div>
+          
+      <div class="banquan" style="display:none;">
+      	<a href="javascript:if(confirm('http://xyunqi.com/products/ecshop?from=nav  \n\nكτݾϞרԃ Teleport Ultra Ђ՘, ӲΪ ̼ˇһٶԲܲ·޶΢ҿѻʨ׃Ϊ̼քǴʼַ֘քַ֘c  \n\nţЫ՚ؾϱǷʏղߪ̼?'))window.location='http://xyunqi.com/products/ecshop?from=nav'" tppabs="http://xyunqi.com/products/ecshop?from=nav" target="_blank" style=" font-family:Verdana; font-size:11px;">Powered&nbsp;by&nbsp;<strong><span style="color: #3366FF">ECShop</span>&nbsp;<span style="color: #FF9966">v3.6.0</span></strong></a>&nbsp;<a href="javascript:if(confirm('http://www.ecshop.com/license.php?product=ecshop_b2c&url=http%3A%2F%2F36ecshop.shopsy.cn%2F36hh%2F  \n\nكτݾϞרԃ Teleport Ultra Ђ՘, ӲΪ ̼ˇһٶԲܲ·޶΢ҿѻʨ׃Ϊ̼քǴʼַ֘քַ֘c  \n\nţЫ՚ؾϱǷʏղߪ̼?'))window.location='http://www.ecshop.com/license.php?product=ecshop_b2c&url=http%3A%2F%2F36ecshop.shopsy.cn%2F36hh%2F'" tppabs="http://www.ecshop.com/license.php?product=ecshop_b2c&url=http%3A%2F%2F36ecshop.shopsy.cn%2F36hh%2F" target="_blank"
+>&nbsp;&nbsp;Licensed</a></div>
  
-  
-  
-  
-  
-  
-   <!-- QQ 号码 {foreach from=$qq item=im} -->
-      <!-- {if $im} -->
-       <li><a href="http://wpa.qq.com/msgrd?V=1&amp;Uin={$im}&amp;Site={$shop_name}&amp;Menu=yes" target="_blank"><img src="http://wpa.qq.com/pa?p=1:{$im}:4" height="16" border="0" alt="QQ" /> {$im}</a> </li>
-      <!-- {/if} -->
-      <!-- {/foreach} 结束QQ号码 -->
-      <!-- 淘宝旺旺 {foreach from=$ww item=im} -->
-      <!-- {if $im} -->
-      <li><a href="http://amos1.taobao.com/msg.ww?v=2&uid={$im|escape:u8_url}&s=2" target="_blank"><img src="http://amos1.taobao.com/online.ww?v=2&uid={$im|escape:u8_url}&s=2" width="16" height="16" border="0" alt="淘宝旺旺" />{$im}</a></li>
-      <!-- {/if} -->
-      <!--{/foreach} 结束淘宝旺旺 -->
-      <!-- Yahoo Messenger {foreach from=$ym item=im} -->
-      <!-- {if $im} -->
-      <li><a href="http://edit.yahoo.com/config/send_webmesg?.target={$im}n&.src=pg" target="_blank"><img src="../images/yahoo.gif" width="18" height="17" border="0" alt="Yahoo Messenger" /> {$im}</a></li>
-      <!-- {/if} -->
-      <!-- {/foreach} 结束Yahoo Messenger -->
-      <!-- MSN Messenger {foreach from=$msn item=im} -->
-      <!-- {if $im} -->
-      <li><img src="../images/msn.gif" width="18" height="17" border="0" alt="MSN" /> <a href="msnim:chat?contact={$im}">{$im}</a></li>
-      <!-- {/if} -->
-      <!-- {/foreach} 结束MSN Messenger -->
-      <!-- Skype {foreach from=$skype item=im} -->
-      <!-- {if $im} -->
-      <li><img src="http://mystatus.skype.com/smallclassic/{$im|escape:url}" alt="Skype" /><a href="skype:{$im|escape:url}?call">{$im}</a></li>
-      <!-- {/if} --> 
-  <!-- {/foreach} -->
-  
-  
-  
-  
+</div>
+
+
+
+
+
+
+
   
   
   
@@ -186,83 +114,4 @@ background: url(../images/footsprite.png) no-repeat -205px -392px;">
   
   
 
-	 <!-- 客服电话{if $service_phone} -->
-     <li> 服务热线: {$service_phone}</li>
- <!-- 结束客服电话{/if} -->
-        </ul>
-    </div>
-    <div class="b"></div>
-</div>
-<div id="divMenu" onmouseover="OnlineOver();" style="display: block; "><img src="ecmoban_qq/images/qq_1.gif" class="press" alt="在线咨询"></div>
-</div>
-<script type="text/javascript">
-//<![CDATA[
-var tips; var theTop = 120/*这是默认高度,越大越往下*/; var old = theTop;
-function initFloatTips() {
-tips = document.getElementById('divQQbox');
-moveTips();
-};
-function moveTips() {
-var tt=50;
-if (window.innerHeight) {
-pos = window.pageYOffset
-}
-else if (document.documentElement && document.documentElement.scrollTop) {
-pos = document.documentElement.scrollTop
-}
-else if (document.body) {
-pos = document.body.scrollTop;
-}
-pos=pos-tips.offsetTop+theTop;
-pos=tips.offsetTop+pos/10;
-if (pos < theTop) pos = theTop;
-if (pos != old) {
-tips.style.top = pos+"px";
-tt=10;
-//alert(tips.style.top);
-}
-old = pos;
-setTimeout(moveTips,tt);
-}
-//!]]>
-initFloatTips();
-function OnlineOver(){
-document.getElementById("divMenu").style.display = "none";
-document.getElementById("divOnline").style.display = "block";
-document.getElementById("divQQbox").style.width = "170px";
-}
-function OnlineOut(){
-document.getElementById("divMenu").style.display = "block";
-document.getElementById("divOnline").style.display = "none";
-}
-if(typeof(HTMLElement)!="undefined")    //给firefox定义contains()方法，ie下不起作用
-{   
-      HTMLElement.prototype.contains=function(obj)   
-      {   
-          while(obj!=null&&typeof(obj.tagName)!="undefind"){ //通过循环对比来判断是不是obj的父元素
-   　　　　if(obj==this) return true;   
-   　　　　obj=obj.parentNode;
-   　　}   
-          return false;   
-      };   
-}  
-function hideMsgBox(theEvent){ //theEvent用来传入事件，Firefox的方式
-　 if (theEvent){
-　 var browser=navigator.userAgent; //取得浏览器属性
-　 if (browser.indexOf("Firefox")>0){ //如果是Firefox
-　　 if (document.getElementById('divOnline').contains(theEvent.relatedTarget)) { //如果是子元素
-　　 return; //结束函式
-} 
-} 
-if (browser.indexOf("MSIE")>0){ //如果是IE
-if (document.getElementById('divOnline').contains(event.toElement)) { //如果是子元素
-return; //结束函式
-}
-}
-}
-/*要执行的操作*/
-document.getElementById("divMenu").style.display = "block";
-document.getElementById("divOnline").style.display = "none";
-}
-</script>
  
