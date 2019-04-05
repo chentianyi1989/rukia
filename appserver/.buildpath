@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="app/Console"/>
+	<buildpathentry kind="src" path="app/Events"/>
+	<buildpathentry kind="src" path="app/Exceptions"/>
+	<buildpathentry kind="src" path="app/Helper"/>
+	<buildpathentry kind="src" path="app/Http"/>
+	<buildpathentry kind="src" path="app/Jobs"/>
+	<buildpathentry kind="src" path="app/Listeners"/>
+	<buildpathentry kind="src" path="app/Models"/>
+	<buildpathentry kind="src" path="app/Providers"/>
+	<buildpathentry kind="src" path="app/Services/Oauth"/>
+	<buildpathentry kind="src" path="app/Services/Other"/>
+	<buildpathentry kind="src" path="app/Services/Payment/Alipay"/>
+	<buildpathentry kind="src" path="app/Services/Payment/AlipayNew"/>
+	<buildpathentry kind="src" path="app/Services/Payment/AlipayWap"/>
+	<buildpathentry kind="src" path="app/Services/Payment/Teegon"/>
+	<buildpathentry kind="src" path="app/Services/Payment/Unionpay"/>
+	<buildpathentry kind="src" path="app/Services/Payment/wxpay"/>
+	<buildpathentry kind="src" path="app/Services/QiNiu"/>
+	<buildpathentry kind="src" path="app/Services/Shopex"/>
+	<buildpathentry kind="src" path="bootstrap"/>
+	<buildpathentry kind="src" path="config"/>
+	<buildpathentry kind="src" path="database/factories"/>
+	<buildpathentry kind="src" path="database/seeds"/>
+	<buildpathentry kind="src" path="public"/>
+	<buildpathentry kind="src" path="resources/lang/en"/>
+	<buildpathentry kind="src" path="resources/lang/zh-CN"/>
+	<buildpathentry kind="src" path="resources/views/article"/>
+	<buildpathentry kind="src" path="resources/views/emails"/>
+	<buildpathentry kind="src" path="resources/views/goods"/>
+	<buildpathentry kind="src" path="resources/views/notice"/>
+	<buildpathentry kind="src" path="tests"/>
+	<buildpathentry kind="src" path="vendor"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>
