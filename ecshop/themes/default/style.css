@@ -88,7 +88,7 @@ visibility:hidden;
 /*  h3{height:38px; line-height:38px; font-size:12px; background:url(images/bgbr_01.gif) repeat-x left top; text-align:right;
   padding:0px; font-weight:100; color:#FFFFFF; padding-right:10px;
   }*/
-  h3{ height:30px;background:URL(images/sort_b.gif) left top repeat-x; line-height:30px; text-align:right; padding-right:5px;} 
+/*   h3{ height:30px;background:URL(images/sort_b.gif) left top repeat-x; line-height:30px; text-align:right; padding-right:5px;} */ 
   h3 span{ display:block; height:30px; width:193px; background:URL(images/spans.png) left  no-repeat; text-indent:10px; color:#FFFFFF; text-align:left;font-weight:normal; color:#FFFFFF; float:left; font-size:14px;}
 .h3s span{ background:URL(images/spans1.gif) left  no-repeat; }
 .h3s span.text{ background:URL(images/spans2.gif) left  no-repeat; }
@@ -214,42 +214,60 @@ visibility:hidden;
 .m_right ul li a{ color:#fff; text-align:center; font-size:15px; font-family:"微软雅黑"}
 .m_right ul li a:hover{ color:#FFFF99}
 
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 
- 
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before,
+.clearfix:after {
+	content: " ";
+	display: table;
+}
 
-/*.tells{ width:198px; height:25px; line-height:25px; font-size:14px;  text-align:center;   background:URL(images/bgbar_01.gif); position:absolute; right:5px; bottom:0px;} 
-.tells span{font-weight:bold;}
-.log{ padding-top:5px;}
-.log li{float:left;}
-.log .userInfo{text-align:left;}
-.log .userInfo a{text-decoration:none; padding-left:3px; padding-right:3px;}
-.log li img{position:relative; top:5px;}
+.clearfix:after {
+	clear: both;
+}
 
+.serach-box input {
+  width: 100%;
+  height: 42px;
+  padding-left: 10px;
+  border: 2px solid #7BA7AB;
+  border-radius: 5px;
+  outline: none;
+  background: #F9F0DA;
+  color: #9E9C9C;
+}
 
-#topNav{background:url(images/topNavBg.gif) no-repeat left top; height:31px;line-height:31px; color:#bebfc1; padding:0px 15px; margin:0px 10px; position:relative;}
-#topNav .topNavR{background:url(images/topNavR.gif) no-repeat; width:5px; height:31px;
-position:absolute; top:0px; right:0px;}
-#topNav a{color:#006ad0; text-decoration:none;}
+.serach-box button {
+  position: absolute; 
+  top: 0;
+  right: 0px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  background: #7BA7AB;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.serach-box button:before {
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #F9F0DA;
+}
 
-#mainNav{padding:0px; width:950px;height:39px;  background:URL(images/bg34.jpg) left bottom repeat-x;}
-.m_left{ float:left; width:600px; padding-left:5px; overflow:hidden; height:32px;}
-.m_left ul li{ float:left; height:32px; width:97px; background:URL(images/li.png) right no-repeat; padding-right:2px;}
-.m_left ul li a{ color:#FFFFFF; display:block; width:97px; line-height:32px;text-align:center; font-size:14px; font-weight:bold} 
-.m_left ul li a:hover{ background:URL(images/bgbar_02.gif) center top no-repeat; }
-.m_left ul li.wgt-menu-more{ display:none}
-.m_right{ float:right; width:240px; overflow:hidden; height:32px;}
-.m_right ul li{ float:left; padding-right:10px; padding-left:10px; line-height:32px;}
-.m_right ul li a{font-size:14px; font-weight:bold; color:#FFFFFF}*/
-/*搜索*/
-#search{ width:948px;background:URL(images/top_bg_3.jpg) left top repeat-x;border:1px solid #dedede; border-top:0px; height:37px; margin:auto}
-#searchForm{ float:left;  height:24px; width:273px; margin-top:6px; margin-left:20px;background:URL(images/search_form.png) no-repeat;}
-#searchForm #category{ display:none}
-#searchForm input#keyword{ width:185px; padding:0px 0px 0px 25px; margin:0px; height:20px; line-height:20px; background:none; border:0px;}
-#searchForm .go{  border:0px;  width:65px; line-height:22px;height:22px;cursor:pointer;padding:0px; margin:0px; overflow:hidden; background:none; color:#FFFFFF}
-#searchForm a{ display:none}
-.keys{ float:left;height:24px; padding-left:10px; padding-top:6px;line-height:24px;   }
-.keys a{padding-left:5px; padding-right:5px;  }
-.keys a:hover{ color:#A51F1C}
+#searchForm {
+  position: relative;
+  width: 600px;
+  margin: 200 auto;
+}
+
 /* ====================
      模块
 ==================== */
@@ -692,9 +710,9 @@ position:absolute; top:0px; right:0px;}
 .nav-menu .maxmenu .m_left ul li a{background: none; color: #363636; font-size: 16px;width: 120px; height:100px; line-height: 100px;}
 .nav-menu .maxmenu .m_left ul li a:hover{color: #ce0000;}
 .nav-menu .serach-box{float: left; width: 265px; margin-top: 28px; }
-#searchForm{width: 265px; margin: 0; height: 37px; background: url(images/search.jpg) no-repeat left top;}
-#searchForm input#keyword{width: 135px; padding-left: 45px;height: 35px;line-height: 35px; margin-top: 1px;}
-#searchForm .go{width: 84px; line-height: 34px; height: 35px;}
+
+
+
 /*首页分类*/
 .index-cat{width: 230px; height: 430px; float: left; background: #535556; padding: 15px 0; position: relative; z-index: 10;}
 .index-cat .cat-box{width: 230px; height: 50px; }
@@ -713,14 +731,14 @@ position:absolute; top:0px; right:0px;}
 .index-cat .cat-box:hover{background: #1F98FF;}
 .index-cat .cat-box:hover .cat2-box{display: block;}
 
-.index-banner{float: left; width: 970px; height: 460px;}
+.index-banner{float: left; width: 880px; height: 460px;}
 .index-ad{padding: 20px 0 0;}
 .index-ad .ad-tg{width: 230px; height: 206px; float: left;}
 .ad-lb{width: 960px; padding-left: 10px; float: left;}
 .ad-lb .swiper-button-next{background: url(images/next.jpg) no-repeat left top; width: 54px;height:206px; top: 0; right: 0; margin: 0;}
 .ad-lb .swiper-button-prev{background: url(images/pre.jpg) no-repeat left top; width: 54px;height:206px; top: 0; left: 0; margin: 0;}
 /*首页商品*/
-.index-body{background: #F5F5F5; margin-top: 40px;}
+.index-body{margin-top: 20px;}
 .index-body .body-goods .goods-title{font-size: 24px; line-height: 30px; padding: 30px 0 15px; color: #363636;}
 .goods-wrap{height: 555px;}
 .goods-wrap .goods-leftad{width: 230px; height: 555px; float: left;}

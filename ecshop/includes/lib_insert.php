@@ -256,6 +256,8 @@ function insert_member_info()
     return $output;
 }
 
+
+
 /**
  * 调用评论信息
  *

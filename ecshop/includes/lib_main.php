@@ -1660,9 +1660,9 @@ function assign_template($ctype = '', $catlist = array())
     $smarty->assign('username',      !empty($_SESSION['user_name']) ? $_SESSION['user_name'] : '');
     $smarty->assign('category_list', cat_list(0, 0, true,  2, false));
     $smarty->assign('catalog_list',  cat_list(0, 0, false, 1, false));
-//     $smarty->assign('navigator_list',        get_navigator($ctype, $catlist));  //自定义导航栏
+    //$smarty->assign('navigator_list',        get_navigator($ctype, $catlist));  //自定义导航栏
 
-    echo "<br/><br/><br/><br/>";
+  
     $smarty->assign('navigator_list',cat_nav_list());  //自定义导航栏
     
 //     var_dump(cat_nav_list());
