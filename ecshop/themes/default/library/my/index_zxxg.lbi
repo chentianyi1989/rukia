@@ -51,17 +51,52 @@
 </div>
 
 <div style="width: 65%;height: 500px;float: left;padding-left: 10px">
-	<div style="width: 33%;height: 250px;background-color:black;float: left;">
-		<img alt="" src="themes/default/images/my/1.jpg" width="100%" height="100%">
+
+	<div style="width: 33%;height: 250px;float: left;">
+		<div class="grid">
+			<figure class="effect-milo">
+	           <img src="themes/default/images/my/1.jpg" alt="img11" style="height: 300px"/>
+	           <figcaption>
+<!-- 	               <h2>高级设计师 <span>Milo</span></h2> -->
+	               <p style="width: 100%;height: 100%">Milo went to the woods. He took a fun ride and never came back.</p> 
+	           </figcaption>			
+	       </figure>
+       </div>	
 	</div>
+	
+	
 	<div style="width: 33%;height: 250px;background-color:gray;float: left;">
-		<img alt="" src="themes/default/images/my/2.jpg" width="100%" height="100%">
+		<div class="grid">
+			<figure class="effect-milo">
+	           <img src="themes/default/images/my/2.jpg" alt="img11" style="height: 300px"/>
+	           <figcaption>
+<!-- 	               <h2>高级设计师 <span>Milo</span></h2> -->
+	               <p style="width: 100%;height: 100%">Milo went to the woods. He took a fun ride and never came back.</p> 
+	           </figcaption>			
+	       </figure>
+       </div>	
 	</div>
 	<div style="width: 34%;height: 250px;background-color:green;float: left;">
-		<img alt="" src="themes/default/images/my/3.jpg" width="100%" height="100%">
+				<div class="grid">
+			<figure class="effect-milo">
+	           <img src="themes/default/images/my/3.jpg" alt="img11" style="height: 300px"/>
+	           <figcaption>
+<!-- 	               <h2>高级设计师 <span>Milo</span></h2> -->
+	               <p style="width: 100%;height: 100%">Milo went to the woods. He took a fun ride and never came back.</p> 
+	           </figcaption>			
+	       </figure>
+       </div>	
 	</div>
 	<div style="width: 100%;height: 250px;background-color:blue;float: left;">
-		<img alt="" src="themes/default/images/my/4.jpg" width="100%" height="100%">
+				<div class="grid">
+			<figure class="effect-milo">
+	           <img src="themes/default/images/my/4.jpg" alt="img11" style="height: 250px"/>
+	           <figcaption>
+<!-- 	               <h2>高级设计师 <span>Milo</span></h2> -->
+	               <p style="width: 100%;height: 100%">Milo went to the woods. He took a fun ride and never came back.</p> 
+	           </figcaption>			
+	       </figure>
+       </div>	
 	</div>
 </div>
 
